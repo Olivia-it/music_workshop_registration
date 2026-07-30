@@ -1,0 +1,33 @@
+body{
+  background-color: aqua;
+}
+
+h1{
+  padding: 20px;
+  color: red
+}
+
+p{
+  font-size: 2rem;
+  padding: 20px
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+label {
+  margin: 20px;
+  font-weight: 600;
+}
+
+button {
+  width: 120px;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: greenyellow;
+  border-radius: 10px;
+}
+
