@@ -15,15 +15,36 @@ function App() {
 
 
   //handle submit
-  function handleSubmit(event){
+  async function handleSubmit(event){
     event.preventDefault();
     //store submitted data in React state
-    setSubmitted ({
+    const registrationData = {
       name: name,
       email: email,
       phone: phone
-    })
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/register", {
+      method: "POST",
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(registrationData)
+      });
+
+      const result = await response.json();
+
+      if (result.success){
+        setSubmitted(registrationData);
+      }
+    }
+
+    catch(error){
+      console.error("Error submitting registration, OG: ", error)
+    }
   }
+  
   //fuction when user clicks on register another person button
   //it resets the fields to empty and displays form again
   function handleNewRegistration(){
@@ -43,18 +64,18 @@ function App() {
     {!submitted ?(
       <form onSubmit={handleSubmit}>
         <p>Please enter your details to register</p>
-        <div className="name">
-          <label>Full Name</label><br />
+        <div className="name field">
+          <label class="lbl">Full Name</label><br />
           <input type="text" placeholder="John Smith" value={name} onChange={(e)=>setName(e.target.value)} />
         </div>
 
-        <div className="email">
-          <label>Email</label><br />
+        <div className="email field">
+          <label class="lbl">Email</label><br />
           <input type="email" placeholder="john@example.com" value={email} onChange={(e)=> setEmail(e.target.value)}/>
         </div>
 
-        <div className="phone">
-          <label>Phone Number</label><br />
+        <div className="phone field">
+          <label class="lbl">Phone Number</label><br />
           <input type="tel" placeholder="079..." value={phone} onChange={(e)=> setPhone(e.target.value)}/>
         </div>
 

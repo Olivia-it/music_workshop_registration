@@ -1,14 +1,25 @@
+/* * {
+border: 1px solid
+} */
+
 body{
+  margin: 0 auto;
+  width: 70vw;
+  height: 100vh;
   background-image: url("./assets/music_notes.png");
   background-repeat: no-repeat;
-  background-size: cover;
 
+  background-position-x: center;
+  background-position-y:center;
+    background-color: rgba(200, 100, 212); /* red tint with transparency */
+  background-blend-mode: multiply;
 }
+
 
 h1{
   margin-top: 30px;
   padding: 20px;
-  color: red;
+  color: rgb(233, 217, 217);
   font-size: 3rem;
 }
 
@@ -19,25 +30,36 @@ p{
 }
 
 form p, .submitted-box p:nth-child(1) {
-color: blueviolet;
-background-color: bisque;
+color: rgb(211, 204, 218);
+background-color: rgb(54, 51, 48);
 border-radius: 10px;
 margin-top: 20px;
-margin-bottom: 80px;
+margin-bottom: 100px;
 }
 
 .submitted-box p:not(:first-of-type){
   margin: -30px;
 }
 
+.field{
+  display: flex;
+  margin:20px auto;
+  justify-content: space-between;
+  /* margin-bottom: 20px; */
+  max-width: 600px;
+
+}
 input {
   padding: 10px;
   border-radius: 10px;
   font-size: 1.2rem;
+  width:300px;
 }
-label {
-  margin: 20px;
+.lbl {
+  margin-top: 30px;
   font-weight: 600;
+  font-size: 2.2rem;
+  color: rgb(211, 204, 218);
 }
 
 button {
@@ -57,4 +79,7 @@ button:hover{
 .newBtn{
   width: 300px;
 
+}
+.container {
+  margin: 0 auto;
 }
