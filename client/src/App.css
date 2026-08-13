@@ -11,7 +11,7 @@ body{
 
   background-position-x: center;
   background-position-y:center;
-    background-color: rgba(200, 100, 212); /* red tint with transparency */
+    background-color: rgb(131, 236, 25); /* red tint with transparency */
   background-blend-mode: multiply;
 }
 
@@ -82,4 +82,15 @@ button:hover{
 }
 .container {
   margin: 0 auto;
+}
+
+.error-msg{
+  background-color: #cea4a4;
+  color: #b91c1c;
+  border: 1px solid #ef4444;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 2rem auto;
+  width: 400px;
+  
 }

@@ -3,9 +3,17 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const nodemailer = require("nodemailer");
+const mongoose = require("mongoose");
+const { MongoServerClosedError } = require("mongodb");
 
 app.use(cors());
 app.use(express.json());
+
+
+mongoose 
+    .connect(process.env.MONGODB_URI)
+    .then(() => console.log("Connected to MongooDB Atlas"))
+    .catch((err) => console.log("Mongo connection error OG", err));
 
 //email transporter hotmail
 // const transporter = nodemailer.createTransport({
@@ -27,6 +35,27 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+//Creating registration model. Mongo will use it to create db
+const registrationSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required : true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date, 
+    default: Date.now,
+  }
+})
+// this creates a model called Registration
+const Registration = mongoose.model("Registration", registrationSchema);
 
 //setting up the server:
 //-npm install express cors
@@ -41,31 +70,60 @@ app.get("/", (req, res) => {
 //connect react form to backend
 
 //post contains react object
-//res.json sends back response to React
+//res.json sends back response to React and saves registration in mongoDB
 app.post("/register", async (req, res) => {
-  console.log("Received registration:", req.body);
+  const { name, email, phone } = req.body;
 
   try {
+    //save to mongo
+    const newRegistration = new Registration({
+      name,
+      email,
+      phone,
+    });
+    await newRegistration.save();
+    console.log("Registration saved to mongo")
+
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO,
       subject: "New Workshop Registration",
       text: `
-        Name: ${req.body.name}
-        Email: ${req.body.email}
-        Phone: ${req.body.phone}
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
       `
     });
 
-    console.log("Email sent successfully");
+    res.json({ 
+      success: true,
+      message: "Email sent successfully",
+  });
+} 
 
-    res.json({ success: true });
 
-  } catch (error) {
-    console.log("Email sending error: ", error);
-    res.status(500).json({ success: false });
+  catch (error) {
+    console.error("Email sending error: ", error);
+    res.status(500).json({ 
+      success: false, 
+    message: "Failed to submit registration" });
   }
 });
+
+//get will show existing registrations, creating a server end point
+app.get("/registrations", async(req, res) => {
+
+  try{
+    //mongo to find registration document, Registration is a mongoose model
+  const registrations = await Registration.find();
+  res.json(registrations);
+
+} catch(error){
+  console.log("Error getting registrations:", error);
+  res.status(500).json({error: "Could not get registrations"});
+}
+});
+
 
 
 app.listen(5000, () => {
