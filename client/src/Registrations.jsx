@@ -1,37 +1,50 @@
 import { useState, useEffect } from "react";
+import "./App.css"
 
-function Registrations(){
-const [registrations, setRegistrations] = useState([]);
 
-useEffect(() => {
-    //function to load the registrations, async because will wait for server response
-    async function loadRegistrations(){
-        const response = await fetch("http://localhost:5000/registrations");
+function Registrations() {
+  const [registrations, setRegistrations] = useState([]);
+
+  useEffect(() => {
+    async function loadRegistrations() {
+      try {
+        const response = await fetch("http://localhost:5000/registrations",
+          {headers:{
+            Autorization: localStorage.getItem("adminToken"),
+          }
+          });
         const data = await response.json();
 
-        //replaces [] with data so registrations now have the data
+        console.log(data);
+
         setRegistrations(data);
+      } catch (error) {
+        console.log("Error loading registrations:", error);
+      }
     }
 
     loadRegistrations();
-}, []);
+  }, []);
 
-return (
-<div>
-    <h1>List of Registrations</h1>
+  return (
 
-    {registrations.map((person) => (
-        <div key={person._id}>
-        <p>Name: {person.name}</p>
-        <p>Email: {person.email}</p>
-        <p>Phone: {person.phone}</p>
-        <hr />
-</div>
-    ))}
-</div>
+  <div className="container">
+     <h1>Registrations</h1>
 
-);
+    {registrations.length === 0 ? (
+      <p>No registrations found.</p>
+     ) : (
+       registrations.map((person) => (
+          <div key={person._id}>
+             <p><strong>Name:</strong> {person.name}</p>
+             <p><strong>Email:</strong> {person.email}</p>
+             <p><strong>Phone:</strong> {person.phone}</p>
+             <hr />
+           </div>
+         ))
+       )}
+     </div>
+  );
 }
-
 
 export default Registrations;

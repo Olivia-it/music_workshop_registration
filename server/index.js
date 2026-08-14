@@ -110,10 +110,22 @@ app.post("/register", async (req, res) => {
   }
 });
 
+
+
 //get will show existing registrations, creating a server end point
 app.get("/registrations", async(req, res) => {
 
   try{
+
+  //protect access to /registration from just typing the endpoint
+  //make sure to store the token in React app.jsx
+  const token = req.headers.authorization;
+
+  if(token !== process.env.ADMIN_TOKEN){
+    return res.status(403).json({
+      error: "Access denied"
+    })
+  }
     //mongo to find registration document, Registration is a mongoose model
   const registrations = await Registration.find();
   res.json(registrations);
@@ -124,6 +136,20 @@ app.get("/registrations", async(req, res) => {
 }
 });
 
+
+// login endpoint
+app.post("/admin/login", (req, res) => {
+  const {email, password} = req.body;
+
+  if(email === process.env.ADMIN_EMAIl && password === process.env.ADMIN_PASSWORD){
+    res.json({success: true,
+      token: process.env.ADMIN_TOKEN,
+    });
+    }
+    else{
+      res.status(401).json({success: false, message: "Invalid login details"});
+    }
+})
 
 
 app.listen(5000, () => {
