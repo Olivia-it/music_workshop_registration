@@ -100,7 +100,7 @@ button:hover{
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: 220px;
+  left: 20=20px;
   top: 10px;
   justify-content: center;
   margin: 1rem 0;
@@ -124,4 +124,49 @@ button:hover{
  
   margin-bottom: 20px;
   max-width: 600px;
+}
+
+
+table {
+  margin: 250px auto;
+}
+th{
+  font-size: 2rem;
+  color: rgb(211, 204, 218);
+  background-color: rgb(40, 121, 121);
+
+}
+
+tr {
+  background-color: rgba(142, 142, 184, 0.8);
+}
+
+tr:nth-child(even){
+  background-color: rgb(95, 173, 95);
+}
+
+td {
+color: rgb(211, 204, 218);
+font-size: 1.5rem;
+/* background-color: rgb(165, 98, 98); */
+padding: 20px;
+width: 250px;
+}
+
+td.index, th.index{
+  width: 40px;
+}
+
+#cancel-btn button{
+  margin: 0;
+  background-color: #dd3a08;
+}
+#cancel-btn{
+  display: flex;
+align-items: center;
+  justify-content: center;
+}
+
+tr.cancelled {
+  background-color: red;
 }
