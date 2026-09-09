@@ -11,7 +11,7 @@ function Registrations() {
       try {
         const token = localStorage.getItem("adminToken");
 
-        const response = await fetch("http://localhost:5000/registrations", {
+        const response = await fetch("https://music-workshop-registration.onrender.com/registrations", {
           headers: {
             Authorization: token,
           },

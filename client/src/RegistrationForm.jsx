@@ -19,9 +19,11 @@ function App() {
 
   //handle submit
   async function handleSubmit(event){
+    console.log("Nothing is happening")
     event.preventDefault();
     //clear previous errors
     setError("");
+    
 
 
 //data validation in handleSubmit function 
@@ -54,7 +56,7 @@ if(phone.length < 11){
     };
 
     try {
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch("https://music-workshop-registration.onrender.com/register", {
       method: "POST",
       headers:{
         "Content-Type": "application/json"
