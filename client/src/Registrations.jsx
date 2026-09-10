@@ -6,12 +6,16 @@ function Registrations() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
+  //this is FE but it's talking to BE
   useEffect(() => {
     async function loadRegistrations() {
       try {
         const token = localStorage.getItem("adminToken");
 
-        const response = await fetch("https://music-workshop-registration.onrender.com/registrations", {
+//use BE url becase function Registration function is talking to BE
+        const response = await fetch("https://music-workshop-registration.onrender.com/registrations"),
+        //const response = await fetch("http://localhost:5000/registrations", 
+{
           headers: {
             Authorization: token,
           },
@@ -43,6 +47,7 @@ function Registrations() {
   if (error) {
     return <p>{error}</p>;
   }
+  
 
 //  function handleCancel(event) {
 //   const row = event.target.closest("tr");
@@ -63,7 +68,7 @@ function Registrations() {
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
-              <th></th>
+          
             </tr>
           </thead>
 

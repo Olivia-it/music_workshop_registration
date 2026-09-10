@@ -55,8 +55,12 @@ if(phone.length < 11){
       phone: phone
     };
 
+//use BE url- react fetch through express from db
+    
     try {
-      const response = await fetch("https://music-workshop-registration-1.onrender.com/register", {
+      const response = await fetch("https://music-workshop-registration.onrender.com/register",
+      //const response = await fetch("http://localhost:5000/register",
+         {
       method: "POST",
       headers:{
         "Content-Type": "application/json"

@@ -141,7 +141,7 @@ app.get("/registrations", async(req, res) => {
 app.post("/admin/login", (req, res) => {
   const {email, password} = req.body;
 
-  if(email === process.env.ADMIN_EMAIl && password === process.env.ADMIN_PASSWORD){
+  if(email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD){
     res.json({success: true,
       token: process.env.ADMIN_TOKEN,
     });
@@ -151,7 +151,8 @@ app.post("/admin/login", (req, res) => {
     }
 })
 
+const PORT = process.env.PORT || 5000;
 
-app.listen(5000, () => {
-    console.log("My server running on localhost:5000")
-})
+app.listen(PORT, () => {
+  console.log(`My server running on port ${PORT}`);
+});
