@@ -43,10 +43,10 @@ function Registrations() {
     return <p>{error}</p>;
   }
 
- function handleCancel(event) {
-  const row = event.target.closest("tr");
-  row.classList.add("cancelled");
-}
+//  function handleCancel(event) {
+//   const row = event.target.closest("tr");
+//   row.classList.add("cancelled");
+// }
 
   return (
     <div className="container">
@@ -73,7 +73,6 @@ function Registrations() {
                 <td>{person.name}</td>
                 <td>{person.email}</td>
                 <td>{person.phone}</td>
-                <td id="cancel-btn"><button onClick={handleCancel}>Cancel</button></td>
               </tr>
             ))}
           </tbody>
