@@ -13,7 +13,7 @@ function Registrations() {
         const token = localStorage.getItem("adminToken");
 
 //use BE url becase function Registration function is talking to BE
-        const response = await fetch("https://music-workshop-registration.onrender.com/registrations"),
+        const response = await fetch("https://music-workshop-registration.onrender.com/registrations",
         //const response = await fetch("http://localhost:5000/registrations", 
 {
           headers: {
