@@ -56,7 +56,7 @@ if(phone.length < 11){
     };
 
     try {
-      const response = await fetch("https://music-workshop-registration.onrender.com/register", {
+      const response = await fetch("https://music-workshop-registration-1.onrender.com/register", {
       method: "POST",
       headers:{
         "Content-Type": "application/json"
