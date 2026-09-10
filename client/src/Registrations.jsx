@@ -11,11 +11,12 @@ function Registrations() {
       try {
         const token = localStorage.getItem("adminToken");
 
-        const response = await fetch("https://music-workshop-registration.onrender-1.com/registrations", {
+        const response = await fetch("https://music-workshop-registration.onrender.com/registrations", {
           headers: {
             Authorization: token,
           },
         });
+      
 
         const data = await response.json();
 

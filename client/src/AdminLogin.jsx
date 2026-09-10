@@ -10,7 +10,7 @@ async function handleLogin(event){
     setError("");
 
     try {
-        const response = await fetch("https://music-workshop-registration.onrender-1.com/admin/login", 
+        const response = await fetch("https://music-workshop-registration.onrender.com/admin/login", 
         {
             method: "POST", 
             headers:{ "Content-type": "application/json",}, 
