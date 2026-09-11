@@ -69,6 +69,9 @@ if(phone.length < 11){
       });
 
       const result = await response.json();
+      
+      //debugging: log the backend response to the console
+      console.log("Backend response:", result);
 
       if (result.success){
         setError("");
