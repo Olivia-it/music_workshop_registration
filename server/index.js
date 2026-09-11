@@ -87,6 +87,8 @@ app.post("/register", async (req, res) => {
     await newRegistration.save();
     console.log("Registration saved to mongo")
 
+    console.log("About to send email");
+
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO,
@@ -97,6 +99,8 @@ app.post("/register", async (req, res) => {
         Phone: ${phone}
       `
     });
+
+    console.log("Email sent successfully");
 
     res.json({ 
       success: true,
