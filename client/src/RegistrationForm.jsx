@@ -90,10 +90,14 @@ console.log("Passed all validation");
         setError("");
         setSubmitted(registrationData);
       }
+      else{
+        setError(result.message || "Failed to submit registration");
+      }
     }
 
     catch(error){
-      console.error("Error submitting registration, OG: ", error)
+      console.error("Error submitting registration, OG: ", error);
+      setError("Unable to connect to the server");
     }
   }
   
