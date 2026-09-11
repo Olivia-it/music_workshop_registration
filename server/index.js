@@ -151,7 +151,20 @@ app.post("/admin/login", (req, res) => {
     else{
       res.status(401).json({success: false, message: "Invalid login details"});
     }
-})
+});
+
+//debugging: check if smtp.gmail.com resolves to an IP address
+const dns = require("dns");
+
+dns.lookup("smtp.gmail.com", { family: 4 }, (err, address) => {
+  if (err) {
+    console.log("IPv4 lookup error:", err);
+  } else {
+    console.log("Gmail IPv4 address:", address);
+  }
+});
+
+
 
 const PORT = process.env.PORT || 5000;
 
