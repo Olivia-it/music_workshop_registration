@@ -21,35 +21,45 @@ function App() {
   async function handleSubmit(event){
     console.log("Nothing is happening")
     event.preventDefault();
-    //clear previous errors
-    setError("");
 
     //debugging: log the form data to the console
      console.log("Passed preventDefault"); 
+
+    //clear previous errors
+    setError("");
+
+    console.log("Passed setError");
     
 
 
 //data validation in handleSubmit function 
 if(name.trim() === ""){
+   console.log("Name validation");
   setError("Please enter your name")
   return;
 }
 if(email.trim()=== ""){
+  console.log("Email validation");
   setError("Please enter your email");
   return;
 }
 if(!email.includes("@")){
+  console.log("Invalid email validation");
   setError("Please enter valid email address")
   return;
 }
 if(phone.trim() === ""){
+  console.log("Phone validation");
   setError("Please enter your phone number");
   return;
 }
 if(phone.length < 11){
+  console.log("Invalid phone validation");
   setError("Please enter a valid phone number");
   return;
 }
+
+console.log("Passed all validation");
 
     //store submitted data in React state
     const registrationData = {
