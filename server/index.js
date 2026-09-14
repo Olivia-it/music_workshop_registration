@@ -2,7 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const nodemailer = require("nodemailer");
+
+const { Resend } = require("resend");
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 const mongoose = require("mongoose");
 const { MongoServerClosedError } = require("mongodb");
 
@@ -27,16 +30,18 @@ mongoose
 // });
 
 //email transporter gmail
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  family: 4,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+// const transporter = nodemailer.createTransport({
+//     host: "smtp.gmail.com",
+//   port: 587,
+//   secure: false,
+//   family: 4,
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
+//   },
+// });
+
+
 
 //Creating registration model. Mongo will use it to create db
 const registrationSchema = new mongoose.Schema({
@@ -89,8 +94,8 @@ app.post("/register", async (req, res) => {
 
     console.log("About to send email");
 
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    const { data, error } = await resend.emails.send({
+      from: "onboarding@resend.dev",
       to: process.env.EMAIL_TO,
       subject: "New Workshop Registration",
       text: `
@@ -100,7 +105,15 @@ app.post("/register", async (req, res) => {
       `
     });
 
-    console.log("Email sent successfully");
+    if (error) {
+  console.error("Resend error:", error);
+    return res.status(500).json({
+    success: false,
+    message: "Failed to send registration email"
+  });
+}
+
+    console.log("Email sent successfully", data.id);
 
     res.json({ 
       success: true,

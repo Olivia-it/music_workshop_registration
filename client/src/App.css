@@ -4,14 +4,13 @@ border: 1px solid
 
 body{
   margin: 0 auto;
-  margin-left: 300px;
-  width: 70vw;
-  height: 100vh;
-  background-image: url("./assets/music_notes.png");
+  /* width: 70vw;
+  height: 100vh; */
+  /* background-image: url("./assets/music_notes.png");
   background-repeat: no-repeat;
 
   background-position-x: center;
-  background-position-y:center;
+  background-position-y:center; */
     background-color: rgb(131, 236, 25); /* red tint with transparency */
   background-blend-mode: multiply;
 }
@@ -22,6 +21,8 @@ h1{
   padding: 20px;
   color:  rgb(233, 217, 217);
   font-size: 3rem;
+  background-color: rgb(54, 51, 48);
+
 }
 
 p{
@@ -98,11 +99,7 @@ button:hover{
 
 .top-bar {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 20=20px;
-  top: 10px;
-  justify-content: center;
+  justify-content: space-around;
   margin: 1rem 0;
 }
 
