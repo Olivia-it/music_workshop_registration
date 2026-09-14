@@ -12,6 +12,7 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  
   //change state after submitting form
   const [submitted, setSubmitted] = useState(null)
   const[error, setError] = useState("");
@@ -118,6 +119,9 @@ console.log("Passed all validation");
       <form onSubmit={handleSubmit}>
        <p>Please enter your details to register</p> 
        {error && <p className="error-msg">{error}</p>}
+
+  <section className="personal-info question">
+
         <div className="name field">
           <label className="lbl">Full Name</label><br />
           <input type="text" placeholder="John Smith" value={name} onChange={(e)=>setName(e.target.value)} />
@@ -132,7 +136,50 @@ console.log("Passed all validation");
           <label className="lbl">Phone Number</label><br />
           <input type="tel" placeholder="079..." value={phone} onChange={(e)=> setPhone(e.target.value)}/>
         </div>
+        </section>
 
+        <section className="additional-info">
+
+        <div className="question">
+          <label className="lbl">Is this your first time attending a music workshop?</label><br />
+          <input type="radio" name="firstTime" value="yes" /> Yes <br />
+          <input type="radio" name="firstTime" value="no" /> No
+        </div>
+
+        <div className="question">
+          <label className="lbl">What is your singing level?</label><br />
+          <input type="radio" name="level" value="beginner" /> Never Sang Before <br />
+          <input type="radio" name="level" value="intermediate" /> Intermediate <br />
+          <input type="radio" name="level" value="advanced" /> Advanced <br />
+        </div>
+
+      <div className="question">
+      <label className="lbl">What is the type of your voice?</label><br />
+      <input type="radio" name="voice" value="soprano" /> Soprano <br />
+      <input type="radio" name="voice" value="alto" /> Alto <br />
+      <input type="radio" name="voice" value="tenor" /> Tenor <br />
+      <input type="radio" name="voice" value="bass" /> Bass <br />
+      <input type="radio" name="voice" value="not-sure" /> I don't know <br />
+        </div>
+
+        <div className="question">
+          <label className="lbl">Do you play any instruments?</label><br />
+          <input type="text" placeholder="guitar"/>
+        </div>
+
+        <div className="question">
+          <label className="lbl">Your meal preferences</label><br />
+          <input type="radio" name="meal" value="vegetarian" /> Vegetarian <br />
+          <input type="radio" name="meal" value="meat" /> Meat <br />
+        </div>
+
+        <div className="question">
+          <label className="lbl">Do you agree to the terms and conditions?</label><br />
+          <input type="radio" name="terms" value="yes" /> Yes
+          <input type="radio" name="terms" value="no" /> No
+        </div>
+
+        </section>
         <button type="submit">Register</button>
       </form>
     ) :

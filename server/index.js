@@ -130,7 +130,27 @@ app.post("/register", async (req, res) => {
   }
 });
 
+//code  for sending confirmation email to user
+//email here means user email
 
+// const { data: confirmationData, error: confirmationError } = await resend.emails.send({
+//   from: "admin@music-workshop-registration-1.onrender.com/",
+//   to: email,
+//   subject: "Workshop Registration Confirmation",
+//   text: `
+//     Welcome ${name},
+//     Text of registration confirmation will go here.`
+// });
+
+// if (confirmationError) {
+//   console.error("Confirmation email error:", confirmationError);
+//   return res.status(500).json({
+//     success: false,
+//     message: "Registration saved, but confirmation email could not be sent"
+//   });
+// }
+
+// console.log("Confirmation email sent:", confirmationData.id);
 
 //get will show existing registrations, creating a server end point
 app.get("/registrations", async(req, res) => {
