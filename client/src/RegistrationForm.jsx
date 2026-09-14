@@ -112,7 +112,23 @@ console.log("Passed all validation");
 }
 
   return (
+  
     <div className="container">
+      <header className="header">
+      <img src="https://www.stignatius.pl/wp-content/uploads/st-ignatius-polskie-duszpasterstwo-logo-w200.jpg"
+        alt="St Ignatius Church Logo"
+        className="logo"/>
+        <div className="contact-info">
+      <p className="contact-text">St Ignatius Church, 27 High Road, Stamford Hill
+London N15 6ND</p>
+      <p className="contact-text">Contact: warsztaty.stamfordhill@gmail.com</p>
+      </div>
+      </header>
+      <nav>
+        <a href="">Make a Payment</a>
+        <a href="#terms-and-conditions">Terms and Conditions</a>
+        <a href="#filming-consent">Filming Consent</a>
+      </nav>
       <h1>Music Workshop Registration Form</h1>
       
     {!submitted ?(
@@ -178,10 +194,18 @@ console.log("Passed all validation");
           <input type="radio" name="terms" value="yes" /> Yes
           <input type="radio" name="terms" value="no" /> No
         </div>
+       
+        <div className="question">
+          <label className="lbl">Do you consent to being recorded?</label><br />
+          <input type="radio" name="privacy" value="yes" /> Yes
+          <input type="radio" name="privacy" value="no" /> No
+        </div>
 
         </section>
         <button type="submit">Register</button>
       </form>
+
+  
     ) :
 (
         <div className="submitted-box">
@@ -194,6 +218,20 @@ console.log("Passed all validation");
           </div>
       )
       }
+      <div className="question">
+      <p className="title" id="terms-and-conditions">Terms and Conditions</p>
+      <p className="plain-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, veritatis nisi nihil deserunt, incidunt praesentium deleniti maxime alias libero cupiditate dolorum ipsam magnam laborum omnis ab. Iusto, distinctio sapiente.</p>
+    </div>
+    <div className="question">
+      <p className="title" id="filming-consent">Filming Consent</p>
+      <p className="plain-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, veritatis nisi nihil deserunt, incidunt praesentium deleniti maxime alias libero cupiditate dolorum ipsam magnam laborum omnis ab. Iusto, distinctio sapiente.</p>
+    </div>
+    <div className="question">
+      <p className="title" id="payment-information">Payment Information</p>
+      <p className="plain-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, veritatis nisi nihil deserunt, incidunt praesentium deleniti maxime alias libero cupiditate dolorum ipsam magnam laborum omnis ab. Iusto, distinctio sapiente.</p>
+    </div>
+    
+    
     </div>
   );
 }
