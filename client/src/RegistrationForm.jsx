@@ -12,6 +12,14 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [firstTime, setFirstTime] = useState("");
+  const [level, setLevel] = useState("");
+  const [voice, setVoice] = useState("");
+  const [instrument, setInstrument] = useState("");
+  const [meal, setMeal] = useState("");
+  const [terms, setTerms] = useState("");
+  const [privacy, setPrivacy] = useState("");
+
   
   //change state after submitting form
   const [submitted, setSubmitted] = useState(null)
@@ -60,13 +68,62 @@ if(phone.length < 11){
   return;
 }
 
+if(firstTime === ""){
+  console.log("First time validation");
+  setError("Please select if this is your first time attending a music workshop");
+  return;
+}
+
+if(level === ""){
+  console.log("Level validation");
+  setError("Please select your singing level");
+  return;
+}
+
+if(voice === ""){
+  console.log("Voice validation");
+  setError("Please select your voice type");
+  return;
+}
+
+if(meal === ""){
+  console.log("Meal validation");
+  setError("Please select your meal preference");
+  return;
+}
+
+if(terms === ""){
+  console.log("Terms validation");
+  setError("Please agree to the terms and conditions");
+  return;
+}
+
+if(terms === "no"){
+  console.log("Terms validation");
+  setError("You must agree to the terms and conditions to register");
+  return;
+}
+
+if(privacy === ""){
+  console.log("Privacy validation");
+  setError("Please select if you consent to being recorded");
+  return;
+}
+
 console.log("Passed all validation");
 
     //store submitted data in React state
     const registrationData = {
       name: name,
       email: email,
-      phone: phone
+      phone: phone,
+      firstTime: firstTime,
+      level: level,
+      voice: voice,
+      instrument: instrument,
+      meal: meal,
+      terms: terms,
+      privacy: privacy,
     };
 
 //use BE url- react fetch through express from db
@@ -108,6 +165,13 @@ console.log("Passed all validation");
    setName("");
    setEmail("");
    setPhone("");
+   setFirstTime("");
+   setLevel("");
+   setVoice("");
+   setInstrument("");
+   setMeal("");
+   setTerms("");
+   setPrivacy("");
    setSubmitted("")
 }
 
@@ -159,47 +223,47 @@ console.log("Passed all validation");
 
         <div className="question">
           <label className="lbl">Is this your first time attending a music workshop?</label><br />
-          <input type="radio" name="firstTime" value="yes" /> Yes <br />
-          <input type="radio" name="firstTime" value="no" /> No
+          <input type="radio" name="firstTime" value="yes" checked={firstTime === "yes"} onChange={(e) => setFirstTime(e.target.value)} /> Yes <br />
+          <input type="radio" name="firstTime" value="no" checked={firstTime === "no"} onChange={(e) => setFirstTime(e.target.value)} /> No
         </div>
 
         <div className="question">
           <label className="lbl">What is your singing level?</label><br />
-          <input type="radio" name="level" value="beginner" /> Never Sang Before <br />
-          <input type="radio" name="level" value="intermediate" /> Intermediate <br />
-          <input type="radio" name="level" value="advanced" /> Advanced <br />
+          <input type="radio" name="level" value="beginner" checked={level === "beginner"} onChange={(e) => setLevel(e.target.value)} /> Never Sang Before <br />
+          <input type="radio" name="level" value="intermediate" checked={level === "intermediate"} onChange={(e) => setLevel(e.target.value)} /> Intermediate <br />
+          <input type="radio" name="level" value="advanced" checked={level === "advanced"} onChange={(e) => setLevel(e.target.value)} /> Advanced <br />
         </div>
 
       <div className="question">
       <label className="lbl">What is the type of your voice?</label><br />
-      <input type="radio" name="voice" value="soprano" /> Soprano <br />
-      <input type="radio" name="voice" value="alto" /> Alto <br />
-      <input type="radio" name="voice" value="tenor" /> Tenor <br />
-      <input type="radio" name="voice" value="bass" /> Bass <br />
-      <input type="radio" name="voice" value="not-sure" /> I don't know <br />
+      <input type="radio" name="voice" value="soprano" checked={voice === "soprano"} onChange={(e) => setVoice(e.target.value)} /> Soprano <br />
+      <input type="radio" name="voice" value="alto" checked={voice === "alto"} onChange={(e) => setVoice(e.target.value)} /> Alto <br />
+      <input type="radio" name="voice" value="tenor" checked={voice === "tenor"} onChange={(e) => setVoice(e.target.value)} /> Tenor <br />
+      <input type="radio" name="voice" value="bass" checked={voice === "bass"} onChange={(e) => setVoice(e.target.value)} /> Bass <br />
+      <input type="radio" name="voice" value="not-sure" checked={voice === "not-sure"} onChange={(e) => setVoice(e.target.value)} /> I don't know <br />
         </div>
 
         <div className="question">
           <label className="lbl">Do you play any instruments?</label><br />
-          <input type="text" placeholder="guitar"/>
+          <input type="text" placeholder="guitar" value={instrument} onChange={(e) => setInstrument(e.target.value)} />
         </div>
 
         <div className="question">
           <label className="lbl">Your meal preferences</label><br />
-          <input type="radio" name="meal" value="vegetarian" /> Vegetarian <br />
-          <input type="radio" name="meal" value="meat" /> Meat <br />
+          <input type="radio" name="meal" value="vegetarian" checked={meal === "vegetarian"} onChange={(e) => setMeal(e.target.value)} /> Vegetarian <br />
+          <input type="radio" name="meal" value="meat" checked={meal === "meat"} onChange={(e) => setMeal(e.target.value)} /> Meat <br />
         </div>
 
         <div className="question">
           <label className="lbl">Do you agree to the terms and conditions?</label><br />
-          <input type="radio" name="terms" value="yes" /> Yes
-          <input type="radio" name="terms" value="no" /> No
+          <input type="radio" name="terms" value="yes" checked={terms === "yes"} onChange={(e) => setTerms(e.target.value)} /> Yes
+          <input type="radio" name="terms" value="no" checked={terms === "no"} onChange={(e) => setTerms(e.target.value)} /> No
         </div>
        
         <div className="question">
           <label className="lbl">Do you consent to being recorded?</label><br />
-          <input type="radio" name="privacy" value="yes" /> Yes
-          <input type="radio" name="privacy" value="no" /> No
+          <input type="radio" name="privacy" value="yes" checked={privacy === "yes"} onChange={(e) => setPrivacy(e.target.value)} /> Yes
+          <input type="radio" name="privacy" value="no" checked={privacy === "no"} onChange={(e) => setPrivacy(e.target.value)} /> No
         </div>
 
         </section>
@@ -209,11 +273,9 @@ console.log("Passed all validation");
   
     ) :
 (
+  // Subition confirmation message and button to register another person
         <div className="submitted-box">
-          <p>Your Registration has been received!</p>
-          <p>Name: {submitted.name}</p>
-          <p>Email: {submitted.email}</p>
-          <p>Phone: {submitted.phone}</p>
+          <p>{submitted.name}, your Registration has been received!</p>
           <button class="newBtn" onClick={handleNewRegistration}>Register Another Person</button>
           
           </div>
