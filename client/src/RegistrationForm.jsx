@@ -119,13 +119,14 @@ console.log("Passed all validation");
         alt="St Ignatius Church Logo"
         className="logo"/>
         <div className="contact-info">
-      <p className="contact-text">St Ignatius Church, 27 High Road, Stamford Hill
-London N15 6ND</p>
+      <p className="contact-text">St Ignatius Church</ p>
+      <p className="contact-text">27 High Road, Stamford Hill</ p>
+      <p className="contact-text">London N15 6ND</ p>
       <p className="contact-text">Contact: warsztaty.stamfordhill@gmail.com</p>
       </div>
       </header>
       <nav>
-        <a href="">Make a Payment</a>
+        <a href="#payment-information">Make a Payment</a>
         <a href="#terms-and-conditions">Terms and Conditions</a>
         <a href="#filming-consent">Filming Consent</a>
       </nav>
@@ -218,6 +219,14 @@ London N15 6ND</p>
           </div>
       )
       }
+
+      <div className="payment-info-additional">
+        <p>You will receive a confirmation email within 24h of making the payment.</p>
+        <a href="#payment-information">Make a payment</a>
+      </div>
+
+      <div className="division"></div>
+
       <div className="question">
       <p className="title" id="terms-and-conditions">Terms and Conditions</p>
       <p className="plain-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, veritatis nisi nihil deserunt, incidunt praesentium deleniti maxime alias libero cupiditate dolorum ipsam magnam laborum omnis ab. Iusto, distinctio sapiente.</p>
