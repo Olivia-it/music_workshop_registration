@@ -73,6 +73,7 @@ function Registrations() {
               <th>Voice</th>
               <th>Instrument</th>
               <th>Meal</th>
+              <th>Terms</th>
               <th>Privacy</th>
             
             </tr>
@@ -90,6 +91,7 @@ function Registrations() {
                 <td>{person.voice}</td> 
                 <td>{person.instrument}</td>
                 <td>{person.meal}</td>
+                <td>{person.terms}</td>
                 <td>{person.privacy}</td>
               </tr>
             ))}
