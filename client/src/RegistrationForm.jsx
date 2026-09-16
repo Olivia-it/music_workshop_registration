@@ -68,9 +68,9 @@ if(phone.length < 11){
   return;
 }
 
-if(firstTime === ""){
+if(parish === ""){
   console.log("First time validation");
-  setError("Please select if this is your first time attending a music workshop");
+  setError("Please add your parish");
   return;
 }
 
