@@ -57,6 +57,34 @@ const registrationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  parish: {
+    type: String,
+    required: true,
+  },
+  level: {
+    type: String,
+    required: true,
+  },
+  voice: {
+    type: String,
+    required: true,
+  },
+  instrument: {
+    type: String,
+    required: false,
+  },
+  meal: {
+    type: String,
+    required: true,
+  },
+  terms: {
+    type: String,
+    required: true,
+  },
+  privacy: {
+    type: String,
+    required: true,
+  },
   createdAt: {
     type: Date, 
     default: Date.now,
@@ -80,7 +108,7 @@ app.get("/", (req, res) => {
 //post contains react object
 //res.json sends back response to React and saves registration in mongoDB
 app.post("/register", async (req, res) => {
-  const { name, email, phone } = req.body;
+  const { name, email, phone, parish, level, voice, instrument, meal, terms, privacy } = req.body;
 
   try {
     //save to mongo
@@ -88,6 +116,13 @@ app.post("/register", async (req, res) => {
       name,
       email,
       phone,
+      parish,
+      level,
+      voice,
+      instrument,
+      meal,
+      terms,
+      privacy,
     });
     await newRegistration.save();
     console.log("Registration saved to mongo")
@@ -102,6 +137,13 @@ app.post("/register", async (req, res) => {
         Name: ${name}
         Email: ${email}
         Phone: ${phone}
+        Parish: ${parish}
+        Level: ${level}
+        Voice: ${voice}
+        Instrument: ${instrument}
+        Meal: ${meal}
+        Privacy: ${terms}
+        Filming Consent: ${privacy}
       `
     });
 

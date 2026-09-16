@@ -12,7 +12,7 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [firstTime, setFirstTime] = useState("");
+  const [parish, setParish] = useState("");
   const [level, setLevel] = useState("");
   const [voice, setVoice] = useState("");
   const [instrument, setInstrument] = useState("");
@@ -117,7 +117,7 @@ console.log("Passed all validation");
       name: name,
       email: email,
       phone: phone,
-      firstTime: firstTime,
+      parish: parish,
       level: level,
       voice: voice,
       instrument: instrument,
@@ -165,7 +165,7 @@ console.log("Passed all validation");
    setName("");
    setEmail("");
    setPhone("");
-   setFirstTime("");
+   setParish("");
    setLevel("");
    setVoice("");
    setInstrument("");
@@ -222,9 +222,8 @@ console.log("Passed all validation");
         <section className="additional-info">
 
         <div className="question">
-          <label className="lbl">Is this your first time attending a music workshop?</label><br />
-          <input type="radio" name="firstTime" value="yes" checked={firstTime === "yes"} onChange={(e) => setFirstTime(e.target.value)} /> Yes <br />
-          <input type="radio" name="firstTime" value="no" checked={firstTime === "no"} onChange={(e) => setFirstTime(e.target.value)} /> No
+          <label className="lbl">What is your parish?</label><br />
+         <input type="text" placeholder="St Ignatius Church" value={parish} onChange={(e) => setParish(e.target.value)} />
         </div>
 
         <div className="question">
@@ -256,14 +255,18 @@ console.log("Passed all validation");
 
         <div className="question">
           <label className="lbl">Do you agree to the terms and conditions?</label><br />
+          
           <input type="radio" name="terms" value="yes" checked={terms === "yes"} onChange={(e) => setTerms(e.target.value)} /> Yes
-          <input type="radio" name="terms" value="no" checked={terms === "no"} onChange={(e) => setTerms(e.target.value)} /> No
+          <input type="radio" name="terms" value="no" checked={terms === "no"} onChange={(e) => setTerms(e.target.value)} /> No <br />
+          <a className="additional-btn"href="#terms-and-conditions">Terms and Conditions</a> 
         </div>
        
         <div className="question">
           <label className="lbl">Do you consent to being recorded?</label><br />
+          
           <input type="radio" name="privacy" value="yes" checked={privacy === "yes"} onChange={(e) => setPrivacy(e.target.value)} /> Yes
-          <input type="radio" name="privacy" value="no" checked={privacy === "no"} onChange={(e) => setPrivacy(e.target.value)} /> No
+          <input type="radio" name="privacy" value="no" checked={privacy === "no"} onChange={(e) => setPrivacy(e.target.value)} /> No <br />
+          <a className="additional-btn" href="#filming-consent">Filming Consent</a>  
         </div>
 
         </section>
@@ -276,7 +279,7 @@ console.log("Passed all validation");
   // Subition confirmation message and button to register another person
         <div className="submitted-box">
           <p>{submitted.name}, your Registration has been received!</p>
-          <button class="newBtn" onClick={handleNewRegistration}>Register Another Person</button>
+          <button className="newBtn" onClick={handleNewRegistration}>Register Another Person</button>
           
           </div>
       )
@@ -291,15 +294,65 @@ console.log("Passed all validation");
 
       <div className="question">
       <p className="title" id="terms-and-conditions">Terms and Conditions</p>
-      <p className="plain-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, veritatis nisi nihil deserunt, incidunt praesentium deleniti maxime alias libero cupiditate dolorum ipsam magnam laborum omnis ab. Iusto, distinctio sapiente.</p>
+      <p className="plain-text">1. Do udziału w I Bedfordzkich Warsztatach Muzyki  Liturgicznej serdecznie zapraszamy:
+
+organistów, katechetów, siostry zakonne, osoby śpiewające w scholach, chórach i innych zainteresowanych śpiewem na chwałą Bożą
+
+grających na instrumentach (skład orkiestry symfonicznej oraz band), uczniów Szkoły Muzycznej studentów, profesjonalnych instrumentalistów i amatorów
+
+aby wziąć udział w warsztatach nie jest wymagana znajomość czytania nut, nie musisz posiadać wykształcenia muzycznego
+
+2. Warsztaty będą prowadzone przez Huberta Kowalskiego, kompozytora, dyrygenta, producenta muzycznego, kontrabasistę i wokalistę.
+
+3. Uczestnicy warsztatów, chórzyści i instrumentaliści, wezmą udział w zajęciach z emisją głosu, kształcenia słuchu muzycznego, dykcji, nauki pieśni liturgicznych i uwielbieniowych, chorału gregoriańskiego, doskonalenia gry na instrumentach oraz konferencjach na temat muzyki liturgicznej i w kręgu liturgicznym.
+
+4. Sobotnie ćwiczenia warsztatowe są organizowane w sali głównej Stacja Dom Polski 
+
+5. Zwieńczeniem warsztatów będzie Msza św. w niedzielę 23.03.2025 o godz.11.30 w kościele Sacred Heart of Jesus & St Cuthbert Church
+
+6. Warunkiem wzięcia udziału w warsztatach  jest wypełnienie i przesłanie zgłoszenia
+
+6a. Cena nie zawiera opłat parkingowych, biletów na przejazd oraz noclegu.
+
+7. Opłata za uczestnictwo w warsztatach wynosi £35 od osoby powyżej 15 lat. Dla rodziny co najmniej 3 osób przebywających we wspólnym gospodarstwie domowym przewidujemy zniżki. Dzieci poniżej 5 lat wstęp wolny. Młodzież w wieku 5-15 lat £15 Kwota obejmuje koszty prowadzenia zajęć, materiałów dydaktycznych, dyplomów uczestnictwa, serwisu kawowego i ciast oraz obiad w sobotę.
+
+8. Istnieje możliwość wykupienia obiadów w  trzecim dniu warsztatów ( niedziela) po wcześniejszym wpisie na listę.
+
+9. Zajęcia odbywają się pod stałym nadzorem instruktorów według opracowanego programu. Organizator zastrzega sobie prawo do zmiany zajęć uwzględnionych w programie z przyczyn niezależnych od niego.
+
+10. Misją naszych Warsztatów jest stworzenie niepowtarzalnego zespołu, by oddawać chwałę Bogu przez muzykę, w związku z czym niedopuszczalne jest podczas warsztatów wulgarne zachowanie czy przyjmowanie używek. Osoby, które nie zastosują się do tego punktu regulaminu zostaną niezwłocznie wykluczone z warsztatów.
+
+11. Osoby niepełnoletnie mogą uczestniczyć w warsztatach jedynie za zgodą rodzica/prawnego opiekuna oraz pod jego opieką.
+
+12. Uczestnicy zobowiązani są do podporządkowania się zaleceniom instruktorów i organizatorów, a także do przestrzegania zasad bezpieczeństwa, ładu i porządku.
+
+13. Ze względu na charakter i specyfikę prowadzonych zajęć, częstotliwość przerw oraz czas ich trwania może ulec zmianie. Decyzję podejmuje organizator w porozumieniu z osobami prowadzącymi warsztaty
+
+14. Podczas Mszy św. w niedzielę oraz obowiązuje uczestników strój galowy w kolorach biały/czarny.
+
+15. Organizator nie odpowiada za rzeczy zagubione oraz za ewentualne zniszczenia rzeczy należących do uczestników.
+
+16. Uczestnicy otrzymają potrzebne materiały podczas rejestracji przy wejsściu do  sal zajęciowych.
+
+17. Organizator dołoży wszelkich starań, aby zapewnić bezpieczeństwo uczestników podczas trwania zajęć ujętych w programie. Nie ponosi natomiast odpowiedzialności za bezpieczeństwo i zachowanie uczestników w czasie nie ujętym w programie zajęć (dojazd, nocleg).
+
+18. Uczestnicy warsztatów wyrażają zgodę na rejestrację prób oraz finałowego występu i przenoszą nieodpłatnie na rzecz Organizatora prawa do artystycznych wykonań dokonanych podczas warsztatów, z prawem przenoszenia na osoby trzecie. Uczestnicy wyrażają zgodę na rejestrację i publikowanie swojego wizerunku w mediach, mediach społecznościowych w celu dokumentacji i rejestracji przebiegu spotkania i koncertu.
+
+22. Regulamin obowiązuje od  momentu rozpoczęcia zajęć do  momentu ich zakończenia zajęć
+
+23. Zgłoszenie na warsztaty  jest równoznaczne z akceptacją postanowień niniejszego Regulaminu.</p>
     </div>
     <div className="question">
       <p className="title" id="filming-consent">Filming Consent</p>
-      <p className="plain-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, veritatis nisi nihil deserunt, incidunt praesentium deleniti maxime alias libero cupiditate dolorum ipsam magnam laborum omnis ab. Iusto, distinctio sapiente.</p>
+      <p className="plain-text">I give my permission to use my photograph and video. I understand that the images may be used in print publications, online publications, presentations, websites, and social media. I also understand that no royalty, fee or other compensation shall become payable to me by reason of such use.</p>
     </div>
     <div className="question">
       <p className="title" id="payment-information">Payment Information</p>
-      <p className="plain-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, veritatis nisi nihil deserunt, incidunt praesentium deleniti maxime alias libero cupiditate dolorum ipsam magnam laborum omnis ab. Iusto, distinctio sapiente.</p>
+      <p className="plain-text">Please make a payment to:</p>
+      <p className="plain-text">Malgorzata Patecka</p>
+      <p className="plain-text">Sort Code: </p>
+      <p className="plain-text">Account No:</p>
+
     </div>
     
     

@@ -68,7 +68,7 @@ function Registrations() {
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Time</th>
+              <th>Parish</th>
               <th>Level</th>
               <th>Voice</th>
               <th>Instrument</th>
@@ -85,7 +85,7 @@ function Registrations() {
                 <td>{person.name}</td>
                 <td>{person.email}</td>
                 <td>{person.phone}</td>
-                <td>{person.time}</td>
+                <td>{person.parish}</td>
                 <td>{person.level}</td>
                 <td>{person.voice}</td> 
                 <td>{person.instrument}</td>
