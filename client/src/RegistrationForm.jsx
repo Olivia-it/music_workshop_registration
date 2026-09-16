@@ -270,8 +270,10 @@ console.log("Passed all validation");
           </div>
           <a className="additional-btn" href="#filming-consent">Filming Consent</a>  
         
+      
 
         </section>
+        {error && <p className="error-msg">{error}</p>}
         <button type="submit">Register</button>
       </form>
 

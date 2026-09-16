@@ -114,10 +114,10 @@ button:hover{
 }
 
 .error-msg{
-  background-color: #cea4a4;
-  color: #b91c1c;
+  background-color: #d16e6e;
+  color: #e7dddd;
   border: 1px solid #ef4444;
-  padding: 10px;
+  padding: 2.5rem;
   border-radius: 6px;
   margin: 2rem auto;
   width: 400px;
