@@ -236,7 +236,7 @@ table {
   margin: 250px auto;
 }
 th{
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: rgb(211, 204, 218);
   background-color: rgb(40, 121, 121);
 
@@ -252,9 +252,9 @@ tr:nth-child(even){
 
 td {
 color: rgb(211, 204, 218);
-font-size: 1.5rem;
+font-size: 1.2rem;
 /* background-color: rgb(165, 98, 98); */
-padding: 20px;
+padding: 10px;
 width: 250px;
 }
 
