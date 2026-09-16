@@ -233,8 +233,9 @@ margin-top: 30px;
 
 
 table {
-  margin: 250px auto;
+  margin: 5rem auto;
 }
+
 th{
   font-size: 1.6rem;
   color: rgb(211, 204, 218);

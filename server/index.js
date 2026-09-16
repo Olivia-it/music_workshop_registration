@@ -108,9 +108,20 @@ app.get("/", (req, res) => {
 //post contains react object
 //res.json sends back response to React and saves registration in mongoDB
 app.post("/register", async (req, res) => {
+
   const { name, email, phone, parish, level, voice, instrument, meal, terms, privacy } = req.body;
 
   try {
+//validate if existing email
+const existing = await Registration.findOne({ email });
+
+    if (existing) {
+      return res.status(400).json({
+        success: false,
+        message: "A registration with this email already exists"
+      });
+    }
+
     //save to mongo
     const newRegistration = new Registration({
       name,
