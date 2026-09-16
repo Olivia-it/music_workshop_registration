@@ -258,16 +258,18 @@ console.log("Passed all validation");
           
           <input type="radio" name="terms" value="yes" checked={terms === "yes"} onChange={(e) => setTerms(e.target.value)} /> Yes
           <input type="radio" name="terms" value="no" checked={terms === "no"} onChange={(e) => setTerms(e.target.value)} /> No <br />
+          </div>
           <a className="additional-btn"href="#terms-and-conditions">Terms and Conditions</a> 
-        </div>
+        
        
         <div className="question">
           <label className="lbl">Do you consent to being recorded?</label><br />
           
           <input type="radio" name="privacy" value="yes" checked={privacy === "yes"} onChange={(e) => setPrivacy(e.target.value)} /> Yes
           <input type="radio" name="privacy" value="no" checked={privacy === "no"} onChange={(e) => setPrivacy(e.target.value)} /> No <br />
+          </div>
           <a className="additional-btn" href="#filming-consent">Filming Consent</a>  
-        </div>
+        
 
         </section>
         <button type="submit">Register</button>
@@ -278,7 +280,7 @@ console.log("Passed all validation");
 (
   // Subition confirmation message and button to register another person
         <div className="submitted-box">
-          <p>{submitted.name}, your Registration has been received!</p>
+          <p className="reg-confirmation-message">{submitted.name}, your Registration has been received!</p>
           <button className="newBtn" onClick={handleNewRegistration}>Register Another Person</button>
           
           </div>

@@ -26,11 +26,13 @@ p{
 }
 
 form p, .submitted-box p:nth-child(1) {
-color: rgb(211, 204, 218);
-background-color: rgb(54, 51, 48);
+color: rgb(23, 21, 26);
+font-size: 3rem;
+background-color: rgb(101, 245, 245);
 border-radius: 10px;
-margin-top: 20px;
-margin-bottom: 100px;
+margin: 9rem auto;
+width: 80vw;
+border: 8px solid rgb(216, 44, 79);
 }
 
 .submitted-box p:not(:first-of-type){
@@ -52,7 +54,7 @@ input {
 .lbl {
   margin-top: 10px;
   font-weight: 600;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   color: rgb(50, 16, 85);
 }
 
@@ -93,12 +95,12 @@ input[type="radio"]{
 
 
 button {
-  width: 190px;
-  padding: 15px;
+  width: 20rem;
+  padding: 2rem;
   margin-top: 20px;
-  background-color: rgb(214, 77, 111);
+  background-color: rgb(228, 15, 69);
   border-radius: 10px;
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-top: 50px;
   font-weight: 600;
 }
@@ -106,10 +108,7 @@ button:hover{
   background-color: rgb(34, 236, 34);
 }
 
-.newBtn{
-  width: 300px;
 
-}
 .container {
   margin: 0 auto;
 }
@@ -122,8 +121,8 @@ button:hover{
   border-radius: 6px;
   margin: 2rem auto;
   width: 400px;
-  
 }
+
 
 nav {
   display: flex;
@@ -183,7 +182,7 @@ margin-top: 30px;
   font-size: 1.4rem;
   color: rgb(50, 16, 85);
   background-color: rgb(216, 140, 140);
-  margin-top: 30px;
+  margin-top: 20px;
   border: 1px solid rgb(46, 36, 38);
   border-radius: 10px;
 }
@@ -194,11 +193,20 @@ margin-top: 30px;
   width: 100vw;
 }
 
+.reg-confirmation-message{
+  font-size: 1.5rem;
+  color: rgb(50, 16, 85);
+  background-color: rgb(216, 140, 140);
+  margin-top: 20;
+  margin-bottom: 20rem;
+  border: 1px solid rgb(46, 36, 38);
+  border-radius: 10px;
+}
+
 .additional-btn{
   font-size: 1.2rem;
   color: rgb(50, 16, 85);
-  background-color: rgb(216, 140, 140);
-  margin-left: 15em;
+  background-color: rgb(217, 190, 229);
   border: 1px solid rgb(46, 36, 38);
   border-radius: 10px;
   
