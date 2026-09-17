@@ -205,7 +205,7 @@ console.log("Passed all validation");
   <section className="personal-info question">
 
         <div className="name field">
-          <label className="lbl">Full Name</label><br />
+          <label className="lbl">Imie i <Naz></Naz></label><br />
           <input type="text" placeholder="John Smith" value={name} onChange={(e)=>setName(e.target.value)} />
         </div>
 
@@ -215,7 +215,7 @@ console.log("Passed all validation");
         </div>
 
         <div className="phone field">
-          <label className="lbl">Phone Number</label><br />
+          <label className="lbl">Telefon</label><br />
           <input type="tel" placeholder="079..." value={phone} onChange={(e)=> setPhone(e.target.value)}/>
         </div>
         </section>
@@ -229,45 +229,45 @@ console.log("Passed all validation");
 
         <div className="question">
           <label className="lbl">Poziom doświadczenia w śpiewie?</label><br />
-          <input type="radio" name="level" value="beginner" checked={level === "beginner"} onChange={(e) => setLevel(e.target.value)} /> Never Sang Before <br />
-          <input type="radio" name="level" value="intermediate" checked={level === "intermediate"} onChange={(e) => setLevel(e.target.value)} /> Intermediate <br />
-          <input type="radio" name="level" value="advanced" checked={level === "advanced"} onChange={(e) => setLevel(e.target.value)} /> Advanced <br />
+          <input type="radio" name="level" value="beginner" checked={level === "beginner"} onChange={(e) => setLevel(e.target.value)} /> Początkujący <br />
+          <input type="radio" name="level" value="intermediate" checked={level === "intermediate"} onChange={(e) => setLevel(e.target.value)} /> Średniozaawansowany <br />
+          <input type="radio" name="level" value="advanced" checked={level === "advanced"} onChange={(e) => setLevel(e.target.value)} /> Zaawansowany <br />
         </div>
 
       <div className="question">
-      <label className="lbl">What is the type of your voice?</label><br />
-      <input type="radio" name="voice" value="soprano" checked={voice === "soprano"} onChange={(e) => setVoice(e.target.value)} /> Soprano <br />
-      <input type="radio" name="voice" value="alto" checked={voice === "alto"} onChange={(e) => setVoice(e.target.value)} /> Alto <br />
+      <label className="lbl">Jakim glosem śpiewasz?</label><br />
+      <input type="radio" name="voice" value="soprano" checked={voice === "soprano"} onChange={(e) => setVoice(e.target.value)} /> Sopran <br />
+      <input type="radio" name="voice" value="alto" checked={voice === "alto"} onChange={(e) => setVoice(e.target.value)} /> Alt <br />
       <input type="radio" name="voice" value="tenor" checked={voice === "tenor"} onChange={(e) => setVoice(e.target.value)} /> Tenor <br />
       <input type="radio" name="voice" value="bass" checked={voice === "bass"} onChange={(e) => setVoice(e.target.value)} /> Bass <br />
-      <input type="radio" name="voice" value="not-sure" checked={voice === "not-sure"} onChange={(e) => setVoice(e.target.value)} /> I don't know <br />
+      <input type="radio" name="voice" value="not-sure" checked={voice === "not-sure"} onChange={(e) => setVoice(e.target.value)} /> Nie wiem <br />
         </div>
 
         <div className="question">
-          <label className="lbl">Do you play any instruments?</label><br />
-          <input type="text" placeholder="guitar" value={instrument} onChange={(e) => setInstrument(e.target.value)} />
+          <label className="lbl">Czy grałeś na jakimś instrumencie?</label><br />
+          <input type="text" placeholder="gitara" value={instrument} onChange={(e) => setInstrument(e.target.value)} />
         </div>
 
         <div className="question">
-          <label className="lbl">Your meal preferences</label><br />
-          <input type="radio" name="meal" value="vegetarian" checked={meal === "vegetarian"} onChange={(e) => setMeal(e.target.value)} /> Vegetarian <br />
-          <input type="radio" name="meal" value="meat" checked={meal === "meat"} onChange={(e) => setMeal(e.target.value)} /> Meat <br />
+          <label className="lbl">Preferencje dotyczące posiłków</label><br />
+          <input type="radio" name="meal" value="meat" checked={meal === "meat"} onChange={(e) => setMeal(e.target.value)} /> Mięsny <br />
+          <input type="radio" name="meal" value="vegetarian" checked={meal === "vegetarian"} onChange={(e) => setMeal(e.target.value)} /> Wegetariański <br />
         </div>
 
         <div className="question">
-          <label className="lbl">Do you agree to the terms and conditions?</label><br />
+          <label className="lbl">Czy akceptujesz regulamin?</label><br />
           
-          <input type="radio" name="terms" value="yes" checked={terms === "yes"} onChange={(e) => setTerms(e.target.value)} /> Yes
-          <input type="radio" name="terms" value="no" checked={terms === "no"} onChange={(e) => setTerms(e.target.value)} /> No <br />
+          <input type="radio" name="terms" value="yes" checked={terms === "yes"} onChange={(e) => setTerms(e.target.value)} /> Tak
+          <input type="radio" name="terms" value="no" checked={terms === "no"} onChange={(e) => setTerms(e.target.value)} /> Nie <br />
           </div>
-          <a className="additional-btn"href="#terms-and-conditions">Terms and Conditions</a> 
+          <a className="additional-btn"href="#terms-and-conditions">Zobacz regulamin</a> 
         
        
         <div className="question">
-          <label className="lbl">Do you consent to being recorded?</label><br />
+          <label className="lbl">Zobacz warunki zgody?</label><br />
           
-          <input type="radio" name="privacy" value="yes" checked={privacy === "yes"} onChange={(e) => setPrivacy(e.target.value)} /> Yes
-          <input type="radio" name="privacy" value="no" checked={privacy === "no"} onChange={(e) => setPrivacy(e.target.value)} /> No <br />
+          <input type="radio" name="privacy" value="yes" checked={privacy === "yes"} onChange={(e) => setPrivacy(e.target.value)} /> Tak
+          <input type="radio" name="privacy" value="no" checked={privacy === "no"} onChange={(e) => setPrivacy(e.target.value)} /> Nie <br />
           </div>
           <a className="additional-btn" href="#filming-consent">Filming Consent</a>  
         
@@ -291,8 +291,7 @@ console.log("Passed all validation");
       }
 
       <div className="payment-info-additional">
-        <p>You will receive a confirmation email within 24h of making the payment.</p>
-        <a href="#payment-information">Make a payment</a>
+        <p>You will receive a confirmation email soon with payment details.</p>
       </div>
 
       <div className="division"></div>
@@ -348,20 +347,12 @@ aby wziąć udział w warsztatach nie jest wymagana znajomość czytania nut, ni
 23. Zgłoszenie na warsztaty  jest równoznaczne z akceptacją postanowień niniejszego Regulaminu.</p>
     </div>
     <div className="question">
-      <p className="title" id="filming-consent">Filming Consent</p>
+      <p className="title" id="filming-consent">Zgoda na nagranie</p>
       <p className="plain-text">I give my permission to use my photograph and video. I understand that the images may be used in print publications, online publications, presentations, websites, and social media. I also understand that no royalty, fee or other compensation shall become payable to me by reason of such use.</p>
     </div>
-    <div className="question">
-      <p className="title" id="payment-information">Payment Information</p>
-      <p className="plain-text">Please make a payment to:</p>
-      <p className="plain-text">Malgorzata Patecka</p>
-      <p className="plain-text">Sort Code: </p>
-      <p className="plain-text">Account No:</p>
 
     </div>
     
-    
-    </div>
   );
 }
 
