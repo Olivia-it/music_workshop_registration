@@ -190,15 +190,16 @@ console.log("Passed all validation");
       </div>
       </header>
       <nav>
-        <a href="#payment-information">Make a Payment</a>
+        {/* <a href="#payment-information">Make a Payment</a>
         <a href="#terms-and-conditions">Terms and Conditions</a>
-        <a href="#filming-consent">Filming Consent</a>
+        <a href="#filming-consent">Filming Consent</a> */}
       </nav>
       <h1>Music Workshop Registration Form</h1>
+      <h2>Warsztaty Muzyki Liturgicznej z Hubertem</h2>
       
     {!submitted ?(
       <form onSubmit={handleSubmit}>
-       <p>Please enter your details to register</p> 
+  
        {error && <p className="error-msg">{error}</p>}
 
   <section className="personal-info question">
@@ -222,12 +223,12 @@ console.log("Passed all validation");
         <section className="additional-info">
 
         <div className="question">
-          <label className="lbl">What is your parish?</label><br />
+          <label className="lbl">Do jakiej parafi nalezysz?</label><br />
          <input type="text" placeholder="St Ignatius Church" value={parish} onChange={(e) => setParish(e.target.value)} />
         </div>
 
         <div className="question">
-          <label className="lbl">What is your singing level?</label><br />
+          <label className="lbl">Poziom doświadczenia w śpiewie?</label><br />
           <input type="radio" name="level" value="beginner" checked={level === "beginner"} onChange={(e) => setLevel(e.target.value)} /> Never Sang Before <br />
           <input type="radio" name="level" value="intermediate" checked={level === "intermediate"} onChange={(e) => setLevel(e.target.value)} /> Intermediate <br />
           <input type="radio" name="level" value="advanced" checked={level === "advanced"} onChange={(e) => setLevel(e.target.value)} /> Advanced <br />
