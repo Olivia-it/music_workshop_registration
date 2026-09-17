@@ -189,11 +189,7 @@ console.log("Passed all validation");
       <p className="contact-text">Contact: warsztaty.stamfordhill@gmail.com</p>
       </div>
       </header>
-      <nav>
-        {/* <a href="#payment-information">Make a Payment</a>
-        <a href="#terms-and-conditions">Terms and Conditions</a>
-        <a href="#filming-consent">Filming Consent</a> */}
-      </nav>
+ 
       <h1>Music Workshop Registration Form</h1>
       <h2>Warsztaty Muzyki Liturgicznej z Hubertem</h2>
       
@@ -205,7 +201,7 @@ console.log("Passed all validation");
   <section className="personal-info question">
 
         <div className="name field">
-          <label className="lbl">Imie i <Naz></Naz></label><br />
+          <label className="lbl">Imie i Nazwisko</label><br />
           <input type="text" placeholder="John Smith" value={name} onChange={(e)=>setName(e.target.value)} />
         </div>
 
@@ -298,53 +294,12 @@ console.log("Passed all validation");
 
       <div className="question">
       <p className="title" id="terms-and-conditions">Terms and Conditions</p>
-      <p className="plain-text">1. Do udziału w I Bedfordzkich Warsztatach Muzyki  Liturgicznej serdecznie zapraszamy:
-
-organistów, katechetów, siostry zakonne, osoby śpiewające w scholach, chórach i innych zainteresowanych śpiewem na chwałą Bożą
-
-grających na instrumentach (skład orkiestry symfonicznej oraz band), uczniów Szkoły Muzycznej studentów, profesjonalnych instrumentalistów i amatorów
-
-aby wziąć udział w warsztatach nie jest wymagana znajomość czytania nut, nie musisz posiadać wykształcenia muzycznego
-
-2. Warsztaty będą prowadzone przez Huberta Kowalskiego, kompozytora, dyrygenta, producenta muzycznego, kontrabasistę i wokalistę.
-
+      <p className="plain-text">
 3. Uczestnicy warsztatów, chórzyści i instrumentaliści, wezmą udział w zajęciach z emisją głosu, kształcenia słuchu muzycznego, dykcji, nauki pieśni liturgicznych i uwielbieniowych, chorału gregoriańskiego, doskonalenia gry na instrumentach oraz konferencjach na temat muzyki liturgicznej i w kręgu liturgicznym.
 
 4. Sobotnie ćwiczenia warsztatowe są organizowane w sali głównej Stacja Dom Polski 
-
 5. Zwieńczeniem warsztatów będzie Msza św. w niedzielę 23.03.2025 o godz.11.30 w kościele Sacred Heart of Jesus & St Cuthbert Church
-
-6. Warunkiem wzięcia udziału w warsztatach  jest wypełnienie i przesłanie zgłoszenia
-
-6a. Cena nie zawiera opłat parkingowych, biletów na przejazd oraz noclegu.
-
-7. Opłata za uczestnictwo w warsztatach wynosi £35 od osoby powyżej 15 lat. Dla rodziny co najmniej 3 osób przebywających we wspólnym gospodarstwie domowym przewidujemy zniżki. Dzieci poniżej 5 lat wstęp wolny. Młodzież w wieku 5-15 lat £15 Kwota obejmuje koszty prowadzenia zajęć, materiałów dydaktycznych, dyplomów uczestnictwa, serwisu kawowego i ciast oraz obiad w sobotę.
-
-8. Istnieje możliwość wykupienia obiadów w  trzecim dniu warsztatów ( niedziela) po wcześniejszym wpisie na listę.
-
-9. Zajęcia odbywają się pod stałym nadzorem instruktorów według opracowanego programu. Organizator zastrzega sobie prawo do zmiany zajęć uwzględnionych w programie z przyczyn niezależnych od niego.
-
-10. Misją naszych Warsztatów jest stworzenie niepowtarzalnego zespołu, by oddawać chwałę Bogu przez muzykę, w związku z czym niedopuszczalne jest podczas warsztatów wulgarne zachowanie czy przyjmowanie używek. Osoby, które nie zastosują się do tego punktu regulaminu zostaną niezwłocznie wykluczone z warsztatów.
-
-11. Osoby niepełnoletnie mogą uczestniczyć w warsztatach jedynie za zgodą rodzica/prawnego opiekuna oraz pod jego opieką.
-
-12. Uczestnicy zobowiązani są do podporządkowania się zaleceniom instruktorów i organizatorów, a także do przestrzegania zasad bezpieczeństwa, ładu i porządku.
-
-13. Ze względu na charakter i specyfikę prowadzonych zajęć, częstotliwość przerw oraz czas ich trwania może ulec zmianie. Decyzję podejmuje organizator w porozumieniu z osobami prowadzącymi warsztaty
-
-14. Podczas Mszy św. w niedzielę oraz obowiązuje uczestników strój galowy w kolorach biały/czarny.
-
-15. Organizator nie odpowiada za rzeczy zagubione oraz za ewentualne zniszczenia rzeczy należących do uczestników.
-
-16. Uczestnicy otrzymają potrzebne materiały podczas rejestracji przy wejsściu do  sal zajęciowych.
-
-17. Organizator dołoży wszelkich starań, aby zapewnić bezpieczeństwo uczestników podczas trwania zajęć ujętych w programie. Nie ponosi natomiast odpowiedzialności za bezpieczeństwo i zachowanie uczestników w czasie nie ujętym w programie zajęć (dojazd, nocleg).
-
-18. Uczestnicy warsztatów wyrażają zgodę na rejestrację prób oraz finałowego występu i przenoszą nieodpłatnie na rzecz Organizatora prawa do artystycznych wykonań dokonanych podczas warsztatów, z prawem przenoszenia na osoby trzecie. Uczestnicy wyrażają zgodę na rejestrację i publikowanie swojego wizerunku w mediach, mediach społecznościowych w celu dokumentacji i rejestracji przebiegu spotkania i koncertu.
-
-22. Regulamin obowiązuje od  momentu rozpoczęcia zajęć do  momentu ich zakończenia zajęć
-
-23. Zgłoszenie na warsztaty  jest równoznaczne z akceptacją postanowień niniejszego Regulaminu.</p>
+</p>
     </div>
     <div className="question">
       <p className="title" id="filming-consent">Zgoda na nagranie</p>
