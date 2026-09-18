@@ -12,7 +12,7 @@ body {
   background-color: #f4f4f4;
   font-family: Arial, sans-serif;
   /* border: 5px solid red; */
-  background-color: rgb(173, 221, 193);
+  background-color: rgb(129, 218, 166);
   overflow-x: hidden;
 }
 
@@ -28,7 +28,7 @@ h1{
   padding: 1.2rem;
   color:  rgb(233, 217, 217);
   font-size: 3rem;
-  background-color: rgb(133, 129, 125);
+  background-color: rgb(92, 89, 86);
  border-radius: 5px;
 }
 
