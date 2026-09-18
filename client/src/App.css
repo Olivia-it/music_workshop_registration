@@ -1,22 +1,39 @@
 
-* {box-sizing: border-box; margin: 0}
+* {box-sizing: border-box; 
+  margin: 0;
+/* border: 2px solid black; */
+}
+
 body {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   width: 100vw;
   text-align: center;
   background-color: #f4f4f4;
   font-family: Arial, sans-serif;
-  border: 1px solid #ccc;
-  background-color: rgb(131, 226, 170)
+  /* border: 5px solid red; */
+  background-color: rgb(173, 221, 193);
+  overflow-x: hidden;
 }
+
+.container {
+margin: 0;
+width: 100vw;
+/* border: 10px solid black; */
+}
+
 
 h1{
   margin-top: 1.3rem;
-  padding: 20px;
+  padding: 1.2rem;
   color:  rgb(233, 217, 217);
   font-size: 3rem;
-  background-color: rgb(54, 51, 48);
+  background-color: rgb(133, 129, 125);
+ border-radius: 5px;
+}
 
+h2 {
+  margin: 2rem auto;
 }
 
 p{
@@ -59,13 +76,13 @@ input {
 }
 
 .question {
-  margin: 4rem;
+  margin: 4rem auto;
   border: 1px solid rgb(241, 115, 146);
   background-color: rgb(172, 218, 172);
   padding: 20px;
   max-width: 80vw;
   text-align: left;
-
+ border: 3px solid yellow;
 }
 
 .question input {
@@ -95,15 +112,16 @@ input[type="radio"]{
 
 
 button {
-  width: 20rem;
-  padding: 2rem;
+  width: 15rem;
+  padding: 1.5rem;
   margin-top: 20px;
-  background-color: rgb(228, 15, 69);
+  background-color: rgb(245, 104, 139);
   border-radius: 10px;
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-top: 50px;
   font-weight: 600;
 }
+
 button:hover{
   background-color: rgb(34, 236, 34);
 }
@@ -155,10 +173,13 @@ font-size: 1.2rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background: #dd3a08;
+  background: #e24212;
   color:  rgb(233, 217, 217);
   min-width: 200px;
   min-height: 60px;
+ margin: 2rem auto;
+ text-align: center;
+  
 }
 
 .payment-info-additional{
@@ -209,7 +230,11 @@ margin-top: 30px;
   background-color: rgb(217, 190, 229);
   border: 1px solid rgb(46, 36, 38);
   border-radius: 10px;
-  
+  margin-top: 3rem;
+}
+
+.btn-div {
+  margin: 2.2rem;
 }
 
 .plain-text{
@@ -285,20 +310,37 @@ tr.cancelled {
   .contact-info {
     text-align: center;
   }
-  nav {
-    flex-direction: column;
-    gap: 1rem;
+
+  h1 {
+    width: 90vw;
+    margin: 2.2rem auto;
+    font-size: 2rem;
   }
+
 .question{
   width: 100vw;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field .lbl {
+  margin-top: -8px;
+  margin-bottom: -15px;;
+ 
 }
 
 .top-bar {
   gap: 1rem;
+  margin: auto;
 }
 .top-bar button {
   min-width: 100px;
   min-height: 40px;
   font-size: 0.8rem;
+
 }
+
+
 }

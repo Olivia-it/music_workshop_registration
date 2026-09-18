@@ -202,17 +202,17 @@ console.log("Passed all validation");
 
         <div className="name field">
           <label className="lbl">Imie i Nazwisko</label><br />
-          <input type="text" placeholder="John Smith" value={name} onChange={(e)=>setName(e.target.value)} />
+          <input className="personal-input" type="text" placeholder="John Smith" value={name} onChange={(e)=>setName(e.target.value)} />
         </div>
 
         <div className="email field">
           <label className="lbl">Email</label><br />
-          <input type="email" placeholder="john@example.com" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+          <input className="personal-input" type="email" placeholder="john@example.com" value={email} onChange={(e)=> setEmail(e.target.value)}/>
         </div>
 
         <div className="phone field">
           <label className="lbl">Telefon</label><br />
-          <input type="tel" placeholder="079..." value={phone} onChange={(e)=> setPhone(e.target.value)}/>
+          <input className="personal-input" type="tel" placeholder="079..." value={phone} onChange={(e)=> setPhone(e.target.value)}/>
         </div>
         </section>
 
@@ -255,18 +255,21 @@ console.log("Passed all validation");
           
           <input type="radio" name="terms" value="yes" checked={terms === "yes"} onChange={(e) => setTerms(e.target.value)} /> Tak
           <input type="radio" name="terms" value="no" checked={terms === "no"} onChange={(e) => setTerms(e.target.value)} /> Nie <br />
-          </div>
+          <div className="btn-div"></div>
           <a className="additional-btn"href="#terms-and-conditions">Zobacz regulamin</a> 
+          </div>
+          
         
        
         <div className="question">
-          <label className="lbl">Zobacz warunki zgody?</label><br />
+          <label className="lbl">Czy zgadzasz sie na filmowanie?</label><br />
           
           <input type="radio" name="privacy" value="yes" checked={privacy === "yes"} onChange={(e) => setPrivacy(e.target.value)} /> Tak
           <input type="radio" name="privacy" value="no" checked={privacy === "no"} onChange={(e) => setPrivacy(e.target.value)} /> Nie <br />
-          </div>
+          <div className="btn-div"></div>
           <a className="additional-btn" href="#filming-consent">Filming Consent</a>  
-        
+          </div>
+          
       
 
         </section>
@@ -302,7 +305,7 @@ console.log("Passed all validation");
 </p>
     </div>
     <div className="question">
-      <p className="title" id="filming-consent">Zgoda na nagranie</p>
+      <p className="title" id="filming-consent">Filming Consent</p>
       <p className="plain-text">I give my permission to use my photograph and video. I understand that the images may be used in print publications, online publications, presentations, websites, and social media. I also understand that no royalty, fee or other compensation shall become payable to me by reason of such use.</p>
     </div>
 
