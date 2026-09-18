@@ -211,7 +211,7 @@ console.log("Passed all validation");
   
        {error && <p className="error-msg">{error}</p>}
 
-  <section className="personal-info question">
+  <section id="q1" className="personal-info question">
 
         <div className="name field">
           <label className="lbl">Imie i Nazwisko</label><br />
@@ -231,7 +231,7 @@ console.log("Passed all validation");
 
         <section className="additional-info">
 
-        <div className="question">  
+        <div id="q3" className="question">  
           <label className="lbl">Ile masz lat?</label><br />
           <input type="radio" name="age" value="teen" checked={age === "teen"} onChange={(e) => setAge(e.target.value)}/> Ponizezej 16 lat <br />
           <input type="radio" name="age" value="adult" checked={age === "adult"} onChange={(e) => setAge(e.target.value)}/> 16+ <br />
@@ -271,7 +271,7 @@ console.log("Passed all validation");
 
         <div className="question">
           <label className="lbl">Alergie zywieniowe</label>
-          <input type="text" name="allergy" placeholder="nie" value={allergy} onChange={(e) => setAllergy(e.target.value)}  />
+          <input type="text" placeholder="nie" value={allergy} onChange={(e) => setAllergy(e.target.value)}  />
         </div>
 
         <div className="question">

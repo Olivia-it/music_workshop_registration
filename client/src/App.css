@@ -153,7 +153,7 @@ nav {
   width: 100vw
 }
 
-a {
+a :not(.reg-nav)>{
   color:rgb(231, 96, 33);
 font-size: 1.2rem;
   text-decoration: none;
