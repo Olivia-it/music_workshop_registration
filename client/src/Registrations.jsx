@@ -68,11 +68,13 @@ function Registrations() {
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
+              <th>Age</th>
               <th>Parish</th>
               <th>Level</th>
               <th>Voice</th>
               <th>Instrument</th>
               <th>Meal</th>
+              <th>Allergy</th>
               <th>Terms</th>
               <th>Privacy</th>
             
@@ -86,11 +88,13 @@ function Registrations() {
                 <td>{person.name}</td>
                 <td>{person.email}</td>
                 <td>{person.phone}</td>
+                <td>{person.age}</td>
                 <td>{person.parish}</td>
                 <td>{person.level}</td>
                 <td>{person.voice}</td> 
                 <td>{person.instrument}</td>
                 <td>{person.meal}</td>
+                <td>{person.allergy}</td>
                 <td>{person.terms}</td>
                 <td>{person.privacy}</td>
               </tr>

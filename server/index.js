@@ -57,6 +57,10 @@ const registrationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  age: {
+    type: String,
+    required: true,
+  },
   parish: {
     type: String,
     required: true,
@@ -74,6 +78,10 @@ const registrationSchema = new mongoose.Schema({
     required: false,
   },
   meal: {
+    type: String,
+    required: true,
+  },
+  allergy: {
     type: String,
     required: true,
   },
@@ -109,7 +117,7 @@ app.get("/", (req, res) => {
 //res.json sends back response to React and saves registration in mongoDB
 app.post("/register", async (req, res) => {
 
-  const { name, email, phone, parish, level, voice, instrument, meal, terms, privacy } = req.body;
+  const { name, email, phone, age, parish, level, voice, instrument, meal, allergy, terms, privacy } = req.body;
 
   try {
 //validate if existing email
@@ -127,11 +135,13 @@ const existing = await Registration.findOne({ email });
       name,
       email,
       phone,
+      age,
       parish,
       level,
       voice,
       instrument,
       meal,
+      allergy,
       terms,
       privacy,
     });
@@ -148,11 +158,13 @@ const existing = await Registration.findOne({ email });
         Name: ${name}
         Email: ${email}
         Phone: ${phone}
+        Age: ${age}
         Parish: ${parish}
         Level: ${level}
         Voice: ${voice}
         Instrument: ${instrument}
         Meal: ${meal}
+        Allergy: ${allergy}
         Privacy: ${terms}
         Filming Consent: ${privacy}
       `
@@ -183,27 +195,6 @@ const existing = await Registration.findOne({ email });
   }
 });
 
-//code  for sending confirmation email to user
-//email here means user email
-
-// const { data: confirmationData, error: confirmationError } = await resend.emails.send({
-//   from: "admin@music-workshop-registration-1.onrender.com/",
-//   to: email,
-//   subject: "Workshop Registration Confirmation",
-//   text: `
-//     Welcome ${name},
-//     Text of registration confirmation will go here.`
-// });
-
-// if (confirmationError) {
-//   console.error("Confirmation email error:", confirmationError);
-//   return res.status(500).json({
-//     success: false,
-//     message: "Registration saved, but confirmation email could not be sent"
-//   });
-// }
-
-// console.log("Confirmation email sent:", confirmationData.id);
 
 //get will show existing registrations, creating a server end point
 app.get("/registrations", async(req, res) => {

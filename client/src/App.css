@@ -42,14 +42,16 @@ p{
   padding: 20px;
 }
 
-form p, .submitted-box p:nth-child(1) {
+form p, .submitted-box p:nth-child(1){
 color: rgb(23, 21, 26);
-font-size: 3rem;
-background-color: rgb(101, 245, 245);
+font-size: 2rem;
+background-color: rgb(161, 240, 161);;
 border-radius: 10px;
-margin: 9rem auto;
-width: 80vw;
-border: 8px solid rgb(216, 44, 79);
+margin: 5rem auto;
+width: 85vw;
+border: 3px solid rgb(216, 44, 79);
+text-align: left;
+
 }
 
 .submitted-box p:not(:first-of-type){

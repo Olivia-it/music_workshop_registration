@@ -12,11 +12,13 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [age, setAge] = useState("");
   const [parish, setParish] = useState("");
   const [level, setLevel] = useState("");
   const [voice, setVoice] = useState("");
   const [instrument, setInstrument] = useState("");
   const [meal, setMeal] = useState("");
+  const [allergy, setAllergy] = useState("");
   const [terms, setTerms] = useState("");
   const [privacy, setPrivacy] = useState("");
 
@@ -30,9 +32,6 @@ function App() {
   async function handleSubmit(event){
     console.log("Nothing is happening")
     event.preventDefault();
-
-    //debugging: log the form data to the console
-     console.log("Passed preventDefault"); 
 
     //clear previous errors
     setError("");
@@ -68,6 +67,11 @@ if(phone.length < 11){
   return;
 }
 
+if(age === ""){
+  setError("Please enter your age");
+  return;
+}
+
 if(parish === ""){
   console.log("First time validation");
   setError("Please add your parish");
@@ -89,6 +93,11 @@ if(voice === ""){
 if(meal === ""){
   console.log("Meal validation");
   setError("Please select your meal preference");
+  return;
+}
+
+if(allergy === ""){
+  setError("Please enter your allergies or say no");
   return;
 }
 
@@ -117,11 +126,13 @@ console.log("Passed all validation");
       name: name,
       email: email,
       phone: phone,
+      age: age,
       parish: parish,
       level: level,
       voice: voice,
       instrument: instrument,
       meal: meal,
+      allergy: allergy,
       terms: terms,
       privacy: privacy,
     };
@@ -165,11 +176,13 @@ console.log("Passed all validation");
    setName("");
    setEmail("");
    setPhone("");
+   setAge("");
    setParish("");
    setLevel("");
    setVoice("");
    setInstrument("");
    setMeal("");
+   setAllergy("");
    setTerms("");
    setPrivacy("");
    setSubmitted("")
@@ -218,6 +231,12 @@ console.log("Passed all validation");
 
         <section className="additional-info">
 
+        <div className="question">  
+          <label className="lbl">Ile masz lat?</label><br />
+          <input type="radio" name="age" value="teen" checked={age === "teen"} onChange={(e) => setAge(e.target.value)}/> Ponizezej 16 lat <br />
+          <input type="radio" name="age" value="adult" checked={age === "adult"} onChange={(e) => setAge(e.target.value)}/> 16+ <br />
+        </div>
+
         <div className="question">
           <label className="lbl">Do jakiej parafi nalezysz?</label><br />
          <input type="text" placeholder="St Ignatius Church" value={parish} onChange={(e) => setParish(e.target.value)} />
@@ -248,6 +267,11 @@ console.log("Passed all validation");
           <label className="lbl">Preferencje dotyczące posiłków</label><br />
           <input type="radio" name="meal" value="meat" checked={meal === "meat"} onChange={(e) => setMeal(e.target.value)} /> Mięsny <br />
           <input type="radio" name="meal" value="vegetarian" checked={meal === "vegetarian"} onChange={(e) => setMeal(e.target.value)} /> Wegetariański <br />
+        </div>
+
+        <div className="question">
+          <label className="lbl">Alergie zywieniowe</label>
+          <input type="text" name="allergy" placeholder="nie" value={allergy} onChange={(e) => setAllergy(e.target.value)}  />
         </div>
 
         <div className="question">
@@ -282,16 +306,13 @@ console.log("Passed all validation");
 (
   // Subition confirmation message and button to register another person
         <div className="submitted-box">
-          <p className="reg-confirmation-message">{submitted.name}, your Registration has been received!</p>
+          <p className="reg-confirmation-message">Welcome {submitted.name}! Your Registration has been received! 
+            You will soon reveive an email with payment instructions.</p>
           <button className="newBtn" onClick={handleNewRegistration}>Register Another Person</button>
           
           </div>
       )
       }
-
-      <div className="payment-info-additional">
-        <p>You will receive a confirmation email soon with payment details.</p>
-      </div>
 
       <div className="division"></div>
 
