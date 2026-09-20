@@ -23,7 +23,7 @@ function App(){
   return (
     <div>
 <div className="top-bar"><a className="reg-nav" href="#q1">
-<button onClick={() => setShowAdmin(false)}>Registration Form</button></a>
+<button onClick={() => setShowAdmin(false)}>Registration Form</button>
 
   <button onClick={() => setShowAdmin(true)}>Admin Login</button>
   <button onClick={handleLogout}>Logout</button>
