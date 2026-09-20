@@ -153,31 +153,9 @@ const existing = await Registration.findOne({ email });
     await newRegistration.save();
     console.log("Registration saved to mongo")
 
-    console.log("About to send email");
 
-//send email to registered person
-try{
-await transporter.sendMail({
-  from: ` "Workshop Registration" <${process.env.GMAIL_USER}>`,
-  to: email,
-  subject: "Registration Confirmation",
-  text: `
-  Hi ${name},
-
-  The rest of the email goes here
-  `,
-});
-
-console.log("Confirmation email sent.")
-} catch (emailError) {
-  console.error("Email failed:", emailError);
-}
-
-res.json({
-  success: true,
-  message: "REgiststration successful"
-})
-
+    //send email to admin
+    try{
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: process.env.EMAIL_TO,
@@ -200,29 +178,51 @@ res.json({
 
     if (error) {
   console.error("Resend error:", error);
-    return res.status(500).json({
-    success: false,
-    message: "Failed to send registration email"
-  });
-}
+    } else{
+      console.log("Admin email sent to Resend", data.id);
+    }
+
+} catch (resendError) {
+      console.error("Resend failed:", resendError);
+    }
 
     console.log("Email sent successfully", data.id);
 
-    res.json({ 
+
+
+//send email to registered person
+try{
+await transporter.sendMail({
+  from: ` "Workshop Registration" <${process.env.GMAIL_USER}>`,
+  to: email,
+  subject: "Registration Confirmation",
+  text: `
+  Hi ${name},
+
+  The rest of the email goes here
+  `,
+});
+console.log("Confirmation email sent.")
+
+} catch (emailError) {
+  console.error("Email failed:", emailError);
+}
+
+//send response to frontend
+    return res.status(200).json({
       success: true,
-      message: "Email sent successfully",
-  });
-} 
+      message: "Registration successful",
+    });
 
+  } catch (error) {
+    console.error("Registration error:", error);
 
-  catch (error) {
-    console.error("Email sending error: ", error);
-    res.status(500).json({ 
-      success: false, 
-    message: "Failed to submit registration" });
+    return res.status(500).json({
+      success: false,
+      message: "Failed to submit registration",
+    });
   }
 });
-
 
 //get will show existing registrations, creating a server end point
 app.get("/registrations", async(req, res) => {
