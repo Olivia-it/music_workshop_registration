@@ -290,19 +290,20 @@ td.index, th.index{
   width: 40px;
 }
 
-#cancel-btn button{
-  margin: 0;
-  background-color: #dd3a08;
-}
-#cancel-btn{
-  display: flex;
-align-items: center;
-  justify-content: center;
+.unpaid-btn {
+  margin: 0 auto;
+  width: 0.7rem;
+  height:0.7rem;
+  background-color: #d3b9b0;
 }
 
-tr.cancelled {
-  background-color: red;
+.paid-btn {
+   margin: 0 auto;
+  width: 0.7rem;
+  height:0.7rem;
+  background-color: green;
 }
+
 
 @media (max-width: 600px) {
   .header {

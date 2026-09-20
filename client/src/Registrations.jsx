@@ -48,6 +48,12 @@ function Registrations() {
     return <p>{error}</p>;
   }
   
+let paid = false;
+function handlePaid(event){
+  if(paid){
+const paidCell = event.target.closest("button");
+paidCell.classList.add("paid-btn")}
+}
 
 //  function handleCancel(event) {
 //   const row = event.target.closest("tr");
@@ -66,6 +72,7 @@ function Registrations() {
             <tr>
               <th className="index">ID</th>
               <th>Name</th>
+              <th>Paid</th>
               <th>Email</th>
               <th>Phone</th>
               <th>Age</th>
@@ -86,6 +93,7 @@ function Registrations() {
               <tr key={person._id}>
                 <td className="index">{index + 1}</td>
                 <td>{person.name}</td>
+                <td><button className="unpaid-btn" onClick={handlePaid}></button></td>
                 <td>{person.email}</td>
                 <td>{person.phone}</td>
                 <td>{person.age}</td>

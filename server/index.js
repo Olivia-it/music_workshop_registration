@@ -6,6 +6,8 @@ const app = express();
 const { Resend } = require("resend");
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const nodemailer = require("nodemailer")
+
 const mongoose = require("mongoose");
 const { MongoServerClosedError } = require("mongodb");
 
@@ -30,16 +32,17 @@ mongoose
 // });
 
 //email transporter gmail
-// const transporter = nodemailer.createTransport({
-//     host: "smtp.gmail.com",
-//   port: 587,
-//   secure: false,
-//   family: 4,
-//   auth: {
-//     user: process.env.EMAIL_USER,
-//     pass: process.env.EMAIL_PASS,
-//   },
-// });
+const transporter = nodemailer.createTransport({
+  //   host: "smtp.gmail.com",
+  // port: 587,
+  // secure: false,
+  // family: 4,
+  service: "gmail",
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
 
 
 
@@ -145,10 +148,35 @@ const existing = await Registration.findOne({ email });
       terms,
       privacy,
     });
+
+
     await newRegistration.save();
     console.log("Registration saved to mongo")
 
     console.log("About to send email");
+
+//send email to registered person
+try{
+await transporter.sendMail({
+  from: ` "Workshop Registration" <${process.env.GMAIL_USER}>`,
+  to: email,
+  subject: "Registration Confirmation",
+  text: `
+  Hi ${name},
+
+  The rest of the email goes here
+  `,
+});
+
+console.log("Confirmation email sent.")
+} catch (emailError) {
+  console.error("Email failed:", emailError);
+}
+
+res.json({
+  success: true,
+  message: "REgiststration successful"
+})
 
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev",
