@@ -32,17 +32,17 @@ mongoose
 // });
 
 //email transporter gmail
-const transporter = nodemailer.createTransport({
-  //   host: "smtp.gmail.com",
-  // port: 587,
-  // secure: false,
-  // family: 4,
-  service: "gmail",
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-});
+// const transporter = nodemailer.createTransport({
+//     host: "smtp.gmail.com",
+//   port: 587,
+//   secure: false,
+//   family: 4,
+
+//   auth: {
+//     user: process.env.GMAIL_USER,
+//     pass: process.env.GMAIL_APP_PASSWORD,
+//   },
+// });
 
 
 
@@ -189,22 +189,31 @@ const existing = await Registration.findOne({ email });
 
 //Conf REMOVE
 //send email to registered person
-try{
-await transporter.sendMail({
-  from: ` "Workshop Registration" <${process.env.GMAIL_USER}>`,
-  to: email,
-  subject: "Registration Confirmation",
-  text: `
-  Hi ${name},
+// try{
+// await transporter.sendMail({
+//   from: ` "Workshop Registration" <${process.env.GMAIL_USER}>`,
+//   to: email,
+//   subject: "Registration Confirmation",
+//   text: `
+//   Hi ${name},
 
-  The rest of the email goes here
-  `,
-});
-console.log("Confirmation email sent.")
+//   The rest of the email goes here
+//   `,
+// });
 
-} catch (emailError) {
-  console.error("Email failed:", emailError);
-}
+// transporter.verify((error, success) => {
+//   if (error) {
+//     console.error("❌ Gmail transporter error:");
+//     console.error(error);
+//   } else {
+//     console.log("✅ Gmail transporter is ready");
+//   }
+// });
+// console.log("Confirmation email sent.")
+
+// } catch (emailError) {
+//   console.error("Email failed:", emailError);
+// }
 
 //send response to frontend
     return res.status(200).json({
