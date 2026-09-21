@@ -192,7 +192,7 @@ console.log("Passed all validation");
   
     <div className="container">
       <header className="header">
-      <img src="https://www.stignatius.pl/wp-content/uploads/st-ignatius-polskie-duszpasterstwo-logo-w200.jpg"
+      <img className="logo" src="https://www.stignatius.pl/wp-content/uploads/st-ignatius-polskie-duszpasterstwo-logo-w200.jpg"
         alt="St Ignatius Church Logo"
         className="logo"/>
         <div className="contact-info">
@@ -233,8 +233,8 @@ console.log("Passed all validation");
 
         <div id="q3" className="question">  
           <label className="lbl">Ile masz lat?</label><br />
-          <input type="radio" name="age" value="teen" checked={age === "teen"} onChange={(e) => setAge(e.target.value)}/> Ponizezej 16 lat <br />
-          <input type="radio" name="age" value="adult" checked={age === "adult"} onChange={(e) => setAge(e.target.value)}/> 16+ <br />
+          <input type="radio" name="age" value="teen" checked={age === "teen"} onChange={(e) => setAge(e.target.value)}/> Ponizezej 15 lat <br />
+          <input type="radio" name="age" value="adult" checked={age === "adult"} onChange={(e) => setAge(e.target.value)}/> 15+ <br />
         </div>
 
         <div className="question">
@@ -306,8 +306,7 @@ console.log("Passed all validation");
 (
   // Subition confirmation message and button to register another person
         <div className="submitted-box">
-          <p className="reg-confirmation-message">Welcome {submitted.name}! Your Registration has been received! 
-            You will soon reveive an email with payment instructions.</p>
+          <p className="reg-confirmation-message">Witamy {submitted.name}! Dostalismy twoja rejestracje. Niedlugo dostaniesz od nas emaila z szczegolami jak dokonac zaplaty.</p>
           <button className="newBtn" onClick={handleNewRegistration}>Register Another Person</button>
           
           </div>
@@ -319,10 +318,48 @@ console.log("Passed all validation");
       <div className="question">
       <p className="title" id="terms-and-conditions">Terms and Conditions</p>
       <p className="plain-text">
-3. Uczestnicy warsztatów, chórzyści i instrumentaliści, wezmą udział w zajęciach z emisją głosu, kształcenia słuchu muzycznego, dykcji, nauki pieśni liturgicznych i uwielbieniowych, chorału gregoriańskiego, doskonalenia gry na instrumentach oraz konferencjach na temat muzyki liturgicznej i w kręgu liturgicznym.
+        <ol>
+        <li>1Do udziału w Warsztatach Muzyki Liturgicznej serdecznie zapraszamy:</li>
+        <ol type="a">
+          <li>osoby śpiewające w scholach i chórach oraz innych zainteresowanych śpiewem na chwałę Bożą;</li>
+          <li>grających na instrumentach, uczniów, studentów, instrumentalistów profesjonalnych i amatorów;</li>
+          <li>nie jest wymagane wykształcenie muzyczne, doświadczenie, ani znajomość nut;</li>
+          <li>osoby niepełnoletnie mogą uczestniczyć w warsztatach jedynie za zgodą rodzica/prawnego opiekuna lub pełnoletniej osoby upoważnionej; pod jego stałą opieką podczas trwania warsztatów.</li>
+        </ol>
 
-4. Sobotnie ćwiczenia warsztatowe są organizowane w sali głównej Stacja Dom Polski 
-5. Zwieńczeniem warsztatów będzie Msza św. w niedzielę 23.03.2025 o godz.11.30 w kościele Sacred Heart of Jesus & St Cuthbert Church
+        <li>Misją naszych warsztatów jest kształcenie umiejętnosci i rozwijanie talentów, by przez muzykę oddawać chwałę Bogu.</li>
+        <li>Warsztaty są wydarzeniem niedochodowym. Opłata za warsztaty będzie wykorzystana w całości na pokrycie kosztów organizacyjnych.</li>
+        <li>Organizator wraz z komitetem organizacyjnym to wolontariusze i jednocześnie uczestnicy warsztatów, którzy nie pobieraja wynagrodzenia. Obsługa warsztatów opiera się na pracy charytatywnej w czasie wolnym od codziennych obowiazków.</li>
+        <li>Warsztaty będą prowadzone przez Huberta Kowalskiego, kompozytora, dyrygenta, producenta muzycznego, kontrabasistę i wokalistę.</li>
+        <li>Uczestnicy warsztatów, chórzyści i instrumentaliści wezmą udział w zajęciach z emisji głosu, dykcji, akompaniowania, nauki pieśni liturgicznych oraz konferencjach na temat muzyki.</li>
+        <li>Zajęcia odbywają się pod stałym nadzorem instruktorów według opracowanego programu. Organizator zastrzega sobie prawo do zmiany zajęć uwzględnionych w programie.</li>
+        <li>Program warsztatów podzielony jest na trzy dni:</li>
+        <ul>
+        <li>piątek (13.11.2026) wieczór – przywitanie, zajęcia wstępne;</li>
+        <li>sobota: szkoła St Ignatius Catholic Primary School, St Ann’s Road, London, N15 6ND</li>
+        <li>niedziela: szkoła St Ignatius Catholic Primary School, St Ann’s Road, London, N15 6ND</li>
+        </ul>
+    
+        <li>Zwieńczeniem warsztatów będzie Msza św. w niedzielę (15.11.2026) o godz.13.00 w kościele St Ignatius Catholic Church na Stamford Hill.</li>
+        <li>Uczestnicy otrzymają potrzebne materiały podczas rejestracji przy wejściu.</li>
+        <li>Warunkiem wzięcia udziału w warsztatach jest wypełnienie i przesłanie zgłoszenia z jednoczesnym dokonaniem pełnej, bezzwrotnej opłaty na konto podane przez organizatorów.</li>
+        <li>Formularz dla osoby niepełnoletniej wypełnia rodzic / opiekun prawny.</li>
+        <li>Opłata za udział w warsztatach wynosi £50 od osoby powyżej 15 lat. Młodzież i dzieci w wieku 7-15 lat - £30;</li>
+        <ul>
+          <li>Cena obejmuje koszty prowadzenia zajęć, materiałów dydaktycznych, serwisu kawowego i ciast oraz obiadu w sobotę.</li>
+          <li>Cena nie zawiera opłat parkingowych, biletów na przejazd oraz noclegu.</li>
+        </ul>
+        
+        <li>W przypadku rezygnacji z uczestnictwa, opłata nie będzie refundowana.</li>
+        <li>Uczestnicy zobowiązani są do podporządkowania się zaleceniom instruktorów i organizatorów, a także do przestrzegania zasad bezpieczeństwa, porządku i wzajemnego szacunku.</li>
+        <li>Organizator dołoży wszelkich starań, aby zapewnić bezpieczeństwo uczestników podczas trwania zajęć.</li>
+        <li>Organizator nie odpowiada za rzeczy zagubione oraz za ewentualne zniszczenia rzeczy należących do uczestników.</li>
+        <li>Za wszelkie szkody wyrządzone przez uczestnika odpowiada uczestnik lub jego opiekun prawny.</li>
+        <li>Zabronione jest przyjmowanie używek czy wulgarne zachowanie. Palenie papierosów i e-papierosów jest niedopuszczlne w żadnym miejscu na terenie szkoły i parafii. Osoby, które nie zastosują się do tego punktu regulaminu zostaną niezwłocznie wykluczone z warsztatów.</li>
+        <li>Uczestnicy warsztatów wyrażają zgodę na rejestrację prób oraz finałowego występu i przenoszą nieodpłatnie na rzecz Organizatora prawa do artystycznych wykonań dokonanych podczas warsztatów, z prawem przenoszenia na osoby trzecie. Uczestnicy wyrażają zgodę na rejestrację i publikowanie swojego wizerunku w mediach, mediach społecznościowych w celu dokumentacji i rejestracji przebiegu spotkania i koncertu.</li>
+        <li>Zgłoszenie na warsztaty jest równoznaczne z akceptacją postanowień niniejszego Regulaminu.</li>
+        <li>Kontakt mailowy: warsztaty.stamfordhill@gmail.com</li>
+        </ol>
 </p>
     </div>
     <div className="question">

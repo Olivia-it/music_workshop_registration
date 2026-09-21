@@ -224,6 +224,7 @@ margin-top: 30px;
   margin-bottom: 20rem;
   border: 1px solid rgb(46, 36, 38);
   border-radius: 10px;
+  text-align: center;
 }
 
 .additional-btn{
@@ -314,10 +315,19 @@ td.index, th.index{
     text-align: center;
   }
 
+.logo {
+height: 7rem;
+width: 12rem;
+margin: -10px auto;
+}
   h1 {
     width: 90vw;
-    margin: 2.2rem auto;
+    margin: 2rem auto;
     font-size: 2rem;
+  }
+
+  h2{
+    margin-bottom: -20px;
   }
 
 .question{
@@ -331,7 +341,10 @@ td.index, th.index{
 .field .lbl {
   margin-top: -8px;
   margin-bottom: -15px;;
- 
+}
+
+.contact-text{
+margin-bottom: -1.8rem;
 }
 
 .top-bar {
