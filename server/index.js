@@ -152,7 +152,7 @@ const existing = await Registration.findOne({ email });
 
     await newRegistration.save();
     console.log("Registration saved to mongo")
-
+//////////////////////////////////////////////////////////////
 
     //send email to admin
     try{
@@ -219,7 +219,7 @@ console.log("Confirmation email sent.")
 
     return res.status(500).json({
       success: false,
-      message: "Failed to submit registration",
+      message: "Failed to send confirmation email",
     });
   }
 });
