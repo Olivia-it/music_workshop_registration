@@ -231,6 +231,7 @@ const existing = await Registration.findOne({ email });
   }
 });
 
+
 //get will show existing registrations, creating a server end point
 app.get("/registrations", async(req, res) => {
 

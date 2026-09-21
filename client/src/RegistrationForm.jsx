@@ -259,7 +259,7 @@ console.log("Passed all validation");
         </div>
 
         <div className="question">
-          <label className="lbl">Czy grałeś na jakimś instrumencie?</label><br />
+          <label className="lbl">Czy grasz na jakimś instrumencie?</label><br />
           <input type="text" placeholder="gitara" value={instrument} onChange={(e) => setInstrument(e.target.value)} />
         </div>
 
@@ -270,7 +270,7 @@ console.log("Passed all validation");
         </div>
 
         <div className="question">
-          <label className="lbl">Alergie zywieniowe</label>
+          <label className="lbl">Alergie zywieniowe</label><br />
           <input type="text" placeholder="nie" value={allergy} onChange={(e) => setAllergy(e.target.value)}  />
         </div>
 
