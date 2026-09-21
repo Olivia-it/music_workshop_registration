@@ -319,7 +319,7 @@ console.log("Passed all validation");
       <p className="title" id="terms-and-conditions">Terms and Conditions</p>
       <p className="plain-text">
         <ol>
-        <li>1Do udziału w Warsztatach Muzyki Liturgicznej serdecznie zapraszamy:</li>
+        <li>Do udziału w Warsztatach Muzyki Liturgicznej serdecznie zapraszamy:</li>
         <ol type="a">
           <li>osoby śpiewające w scholach i chórach oraz innych zainteresowanych śpiewem na chwałę Bożą;</li>
           <li>grających na instrumentach, uczniów, studentów, instrumentalistów profesjonalnych i amatorów;</li>
