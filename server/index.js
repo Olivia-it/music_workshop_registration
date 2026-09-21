@@ -186,10 +186,8 @@ const existing = await Registration.findOne({ email });
       console.error("Resend failed:", resendError);
     }
 
-    console.log("Email sent successfully", data.id);
 
-
-
+//Conf REMOVE
 //send email to registered person
 try{
 await transporter.sendMail({
