@@ -71,22 +71,23 @@ async function handlePaid(id) {
     const data = await response.json();
 
     if (!response.ok) {
-      alert(data.message || "Could not update payment");
+      console.log("Payment update response:", data);
+      alert(
+        `Payment update failed: ${response.status} - ${
+          data.message || data.error || "Unknown error"
+        }`
+      );
       return;
     }
 
-    // Update the registration on screen
     setRegistrations((currentRegistrations) =>
       currentRegistrations.map((person) =>
-        person._id === id
-          ? { ...person, paid: true }
-          : person
+        person._id === id ? { ...person, paid: true } : person
       )
     );
-
   } catch (error) {
     console.error("Payment update error:", error);
-    alert("Unable to connect to the server");
+    alert(`Unable to connect to the server: ${error.message}`);
   }
 }
 
