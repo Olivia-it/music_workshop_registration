@@ -96,6 +96,11 @@ const registrationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  paid: {
+    type: Boolean,
+    default: false,
+  },
   createdAt: {
     type: Date, 
     default: Date.now,
@@ -282,6 +287,44 @@ dns.lookup("smtp.gmail.com", { family: 4 }, (err, address) => {
   }
 });
 
+app.patch("/registrations/:id/paid", async (req, res) => {
+  try {
+    const token = req.headers.authorization;
+
+    if (token !== process.env.ADMIN_TOKEN) {
+      return res.status(403).json({
+        success: false,
+        message: "Access denied",
+      });
+    }
+
+    const registration = await Registration.findByIdAndUpdate(
+      req.params.id,
+      { paid: true },
+      { new: true }
+    );
+
+    if (!registration) {
+      return res.status(404).json({
+        success: false,
+        message: "Registration not found",
+      });
+    }
+
+    res.json({
+      success: true,
+      registration,
+    });
+
+  } catch (error) {
+    console.error("Error updating payment:", error);
+
+    res.status(500).json({
+      success: false,
+      message: "Could not update payment status",
+    });
+  }
+});
 
 
 const PORT = process.env.PORT || 5000;
