@@ -204,12 +204,22 @@ console.log("Passed all validation");
       </header>
  
       <h1>Music Workshop Registration Form</h1>
-      <h2>Warsztaty Muzyki Liturgicznej z Hubertem</h2>
+      <h2>Warsztaty Muzyki Liturgicznej z Hubertem Kowalskim</h2>
       
     {!submitted ?(
       <form onSubmit={handleSubmit}>
   
        {error && <p className="error-msg">{error}</p>}
+
+      {/* closed registration code */}
+
+      {/* <div className="question">
+      <p>Przepraszamy rejestracja jest juz zamknieta</p>
+      </div> */}
+
+
+{/* will display when reg closes */}
+       <div className="closed">
 
   <section id="q1" className="personal-info question">
 
@@ -297,6 +307,7 @@ console.log("Passed all validation");
       
 
         </section>
+        </div>
         {error && <p className="error-msg">{error}</p>}
         <button type="submit">Register</button>
       </form>
