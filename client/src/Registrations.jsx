@@ -128,7 +128,7 @@ async function handlePaid(id) {
               <tr key={person._id}>
                 <td className="index">{index + 1}</td>
                 <td>{person.name}</td>
-                <td><button className="unpaid-btn" onClick={() => handlePaid(person.id)} disabled={person.paid}>{person.paid ? "Paid" : ""} </button></td>
+                <td><button className="unpaid-btn" onClick={() => handlePaid(person._id)} disabled={person.paid}>{person.paid ? "" : ""} </button></td>
                 <td className="paid"> {person.paid ? "Yes" : "No"}</td>
                 <td>{person.email}</td>
                 <td>{person.phone}</td>
