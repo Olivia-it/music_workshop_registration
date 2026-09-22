@@ -233,12 +233,12 @@ console.log("Passed all validation");
 
         <div id="q3" className="question">  
           <label className="lbl">Ile masz lat?</label><br />
-          <input type="radio" name="age" value="teen" checked={age === "teen"} onChange={(e) => setAge(e.target.value)}/> Ponizezej 15 lat <br />
+          <input type="radio" name="age" value="teen" checked={age === "teen"} onChange={(e) => setAge(e.target.value)}/> Poniżezej 15 lat <br />
           <input type="radio" name="age" value="adult" checked={age === "adult"} onChange={(e) => setAge(e.target.value)}/> 15+ <br />
         </div>
 
         <div className="question">
-          <label className="lbl">Do jakiej parafi nalezysz?</label><br />
+          <label className="lbl">Do jakiej parafi należysz?</label><br />
          <input type="text" placeholder="St Ignatius Church" value={parish} onChange={(e) => setParish(e.target.value)} />
         </div>
 
@@ -270,7 +270,7 @@ console.log("Passed all validation");
         </div>
 
         <div className="question">
-          <label className="lbl">Alergie zywieniowe</label><br />
+          <label className="lbl">Alergie żywieniowe</label><br />
           <input type="text" placeholder="nie" value={allergy} onChange={(e) => setAllergy(e.target.value)}  />
         </div>
 
@@ -306,7 +306,7 @@ console.log("Passed all validation");
 (
   // Subition confirmation message and button to register another person
         <div className="submitted-box">
-          <p className="reg-confirmation-message">Witamy {submitted.name}! Dostalismy twoja rejestracje. Niedlugo dostaniesz od nas emaila z szczegolami jak dokonac zaplaty.</p>
+          <p className="reg-confirmation-message">Witamy {submitted.name}! <br /><br/>Otrzymaliśmy Twoją rejestrację. Wkrótce otrzymasz od nas e-mail z informacjami o sposobie dokonania płatności.</p>
           <button className="newBtn" onClick={handleNewRegistration}>Register Another Person</button>
           
           </div>
