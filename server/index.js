@@ -179,9 +179,42 @@ async function sendConfirmationEmail(name, email){
          
           body : JSON.stringify({
             auth : process.env.EMAIL_API_AUTH,
-            subject: "Potwierdzenie Rejestracji.",
+            subject: "Potwierdzenie Rejestracji i Szczegóły zapłaty.",
             recipient: email,
-            body: "Body goes here"
+            body: `
+            Witaj ${name},
+            dziękujemy za rejestrację na Warsztaty Muzyki Liturgicznej, które odbędą się w dniach 13–15 listopada 2026 r. w Londynie.
+
+Cieszymy się, że dołączysz do naszego wspólnego muzykowania! 🎶
+
+Co dalej?
+
+Aby ostatecznie potwierdzić swój udział w warsztatach, prosimy o dokonanie wpłaty:
+
+- £50 
+
+Dane do przelewu:
+
+Malgorzata Patecka
+Sort code: 04-29-09
+Account number: 00760598
+
+W tytule przelewu prosimy wpisać:
+WM– [IMIĘ I NAZWISKO]
+
+Po zaksięgowaniu wpłaty Twoje miejsce na warsztatach zostanie oficjalnie potwierdzone, a Ty staniesz się uczestnikiem warsztatów.
+
+W ciągu 24 godzin od otrzymania wpłaty wyślemy Ci osobną wiadomość e-mail ze wszystkimi szczegółami dotyczącymi warsztatów, m.in. szczegółowym planem, miejscami, godzinami, informacjami dotyczącymi wyżywienia oraz pozostałymi kwestiami organizacyjnymi.
+
+Jeśli w ciągu 24 godzin od dokonania wpłaty nie otrzymasz wiadomości z informacjami organizacyjnymi, prosimy o kontakt z nami.
+
+Do zobaczenia!
+Nie możemy się już doczekać wspólnego śpiewania. 🎶
+
+Pozdrawiamy serdecznie,
+Zespół Warsztatów Muzyki Liturgicznej
+            
+            `
 
          }),
      });

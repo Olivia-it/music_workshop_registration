@@ -317,7 +317,7 @@ console.log("Passed all validation");
 (
   // Subition confirmation message and button to register another person
         <div className="submitted-box">
-          <p className="reg-confirmation-message">Witamy {submitted.name}! <br /><br/>Otrzymaliśmy Twoją rejestrację. Wkrótce otrzymasz od nas e-mail z informacjami o sposobie dokonania płatności.</p>
+          <p className="reg-confirmation-message">Witamy {submitted.name}! <br /><br/>Otrzymaliśmy Twoją rejestrację. Wkrótce otrzymasz od nas e-mail z informacjami o sposobie dokonania płatności. <br /> Sprawdz koniecznie swoj Junk Mail Folder.</p>
           <button className="newBtn" onClick={handleNewRegistration}>Register Another Person</button>
           
           </div>
