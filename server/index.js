@@ -20,31 +20,6 @@ mongoose
     .then(() => console.log("Connected to MongooDB Atlas"))
     .catch((err) => console.log("Mongo connection error OG", err));
 
-//email transporter hotmail
-// const transporter = nodemailer.createTransport({
-//   host: "smtp.office365.com",
-//   port: 587,
-//   secure: false,
-//   auth: {
-//     user: process.env.EMAIL_USER,
-//     pass: process.env.EMAIL_PASS,
-//   },
-// });
-
-//email transporter gmail
-// const transporter = nodemailer.createTransport({
-//     host: "smtp.gmail.com",
-//   port: 587,
-//   secure: false,
-//   family: 4,
-
-//   auth: {
-//     user: process.env.GMAIL_USER,
-//     pass: process.env.GMAIL_APP_PASSWORD,
-//   },
-// });
-
-
 
 //Creating registration model. Mongo will use it to create db
 const registrationSchema = new mongoose.Schema({
@@ -194,31 +169,44 @@ const existing = await Registration.findOne({ email });
 
 //Conf REMOVE
 //send email to registered person
-// try{
-// await transporter.sendMail({
-//   from: ` "Workshop Registration" <${process.env.GMAIL_USER}>`,
-//   to: email,
-//   subject: "Registration Confirmation",
-//   text: `
-//   Hi ${name},
 
-//   The rest of the email goes here
-//   `,
-// });
+async function sendConfirmationEmail(name, email){
+  const response = await fetch("https://warsztaty-muzyczne.qxt.pl/mail",
+{
+        method : "POST",
+         headers : { 
+          "content-type" : "application/json; charset=UTF-8" },
+         
+          body : JSON.stringify({
+            auth : process.env.EMAIL_API_AUTH,
+            subject: "Potwierdzenie Rejestracji.",
+            recipient: email,
+            body: "Body goes here"
 
-// transporter.verify((error, success) => {
-//   if (error) {
-//     console.error("❌ Gmail transporter error:");
-//     console.error(error);
-//   } else {
-//     console.log("✅ Gmail transporter is ready");
-//   }
-// });
-// console.log("Confirmation email sent.")
+         }),
+     });
 
-// } catch (emailError) {
-//   console.error("Email failed:", emailError);
-// }
+     //read response as text first
+      const responseText = await response.text();
+
+  console.log("Email API status:", response.status);
+  console.log("Email API response:", responseText);
+
+     if(!response.ok){
+      const errorText = await response.text();
+      throw new Error(`Email API failed: ${response.status} ${errorText}`);
+     }
+
+     return responseText;
+    }
+
+try {
+  await sendConfirmationEmail(name, email);
+  console.log("Confirmation email sent");
+} catch (emailError) {
+  console.error("Confirmation email failed:", emailError);
+}
+
 
 //send response to frontend
     return res.status(200).json({

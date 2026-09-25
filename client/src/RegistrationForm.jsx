@@ -43,22 +43,22 @@ function App() {
 //data validation in handleSubmit function 
 if(name.trim() === ""){
    console.log("Name validation");
-  setError("Please enter your name")
+  setError("Wpisz swoje imie.")
   return;
 }
 if(email.trim()=== ""){
   console.log("Email validation");
-  setError("Please enter your email");
+  setError("Wpisz swoj email");
   return;
 }
 if(!email.includes("@")){
   console.log("Invalid email validation");
-  setError("Please enter valid email address")
+  setError("Nieprawidlowy email.")
   return;
 }
 if(phone.trim() === ""){
   console.log("Phone validation");
-  setError("Please enter your phone number");
+  setError("Wpisz swoj numer telefonu.");
   return;
 }
 if(phone.length < 11){
@@ -68,25 +68,25 @@ if(phone.length < 11){
 }
 
 if(age === ""){
-  setError("Please enter your age");
+  setError("Wpisz swoj wiek.");
   return;
 }
 
 if(parish === ""){
   console.log("First time validation");
-  setError("Please add your parish");
+  setError("Wpisz swoja parafie albo napisz ze nie masz.");
   return;
 }
 
 if(level === ""){
   console.log("Level validation");
-  setError("Please select your singing level");
+  setError("Wybierz swoj poziom spiewu.");
   return;
 }
 
 if(voice === ""){
   console.log("Voice validation");
-  setError("Please select your voice type");
+  setError("Wybierz jakim glosem spiewasz");
   return;
 }
 
@@ -97,19 +97,19 @@ if(meal === ""){
 }
 
 if(allergy === ""){
-  setError("Please enter your allergies or say no");
+  setError("Wpisz swoje alergie albo napisz: nie.");
   return;
 }
 
 if(terms === ""){
   console.log("Terms validation");
-  setError("Please agree to the terms and conditions");
+  setError("Zaakceptuj regulami zeby sie zapisac.");
   return;
 }
 
 if(terms === "no"){
   console.log("Terms validation");
-  setError("You must agree to the terms and conditions to register");
+  setError("Zaakceptuj regulami zeby sie zapisac.");
   return;
 }
 
