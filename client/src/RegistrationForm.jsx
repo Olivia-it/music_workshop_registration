@@ -193,8 +193,7 @@ console.log("Passed all validation");
     <div className="container">
       <header className="header">
       <img className="logo" src="https://www.stignatius.pl/wp-content/uploads/st-ignatius-polskie-duszpasterstwo-logo-w200.jpg"
-        alt="St Ignatius Church Logo"
-        className="logo"/>
+        alt="St Ignatius Church Logo"/>
         <div className="contact-info">
       <p className="contact-text">St Ignatius Church</ p>
       <p className="contact-text">27 High Road, Stamford Hill</ p>

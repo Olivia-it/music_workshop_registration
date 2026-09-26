@@ -22,6 +22,13 @@ function App(){
 
   return (
     <div>
+    <div className="creator">
+    <p>Created by Olivia Gie</p>
+    <img className="creator-logo" src="/src/assets/github-logo.png" alt="github-logo"/>
+    <p>github.com/Olivia-it</p>
+    <img className="creator-logo" src="/src/assets/linkedin-logo.png" alt="linkedin-logo" />
+    <p>www.linkedin.com/in/olivia-gie-developer</p>
+    </div>
 <div className="top-bar"><a className=".reg-nav" href="#q1">
 <button onClick={() => setShowAdmin(false)}>Registration Form</button></a>
   <button onClick={() => setShowAdmin(true)}>Admin Login</button>
