@@ -115,7 +115,6 @@ const existing = await Registration.findOne({ email });
       name,
       email,
       phone,
-      age,
       parish,
       level,
       voice,
