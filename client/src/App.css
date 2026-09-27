@@ -267,9 +267,15 @@ margin-top: 30px;
   margin: 2.2rem;
 }
 
-.plain-text{
+.plain-text {
   font-size: 1rem;
   color: rgb(25, 16, 34);
+}
+
+.our-email{
+    font-size: 1rem;
+  color: rgb(25, 16, 34);
+  margin-top: -10px;
 }
 
 .title{
