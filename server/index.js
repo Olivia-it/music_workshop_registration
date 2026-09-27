@@ -169,72 +169,72 @@ const existing = await Registration.findOne({ email });
 //Conf REMOVE
 //send email to registered person
 
-async function sendConfirmationEmail(name, email){
-  const response = await fetch("https://warsztaty-muzyczne.qxt.pl/mail",
-{
-        method : "POST",
-         headers : { 
-          "content-type" : "application/json; charset=UTF-8" },
+// async function sendConfirmationEmail(name, email){
+//   const response = await fetch("https://warsztaty-muzyczne.qxt.pl/mail",
+// {
+//         method : "POST",
+//          headers : { 
+//           "content-type" : "application/json; charset=UTF-8" },
          
-          body : JSON.stringify({
-            auth : process.env.EMAIL_API_AUTH,
-            subject: "Potwierdzenie Rejestracji i Szczegóły zapłaty.",
-            recipient: email,
-            body: `
-            Witaj ${name},
+//           body : JSON.stringify({
+//             auth : process.env.EMAIL_API_AUTH,
+//             subject: "Potwierdzenie Rejestracji i Szczegóły zapłaty.",
+//             recipient: email,
+//             body: `
+//             Witaj ${name},
 
-Dziękujemy za rejestrację na Warsztaty Muzyki Liturgicznej, które odbędą się w dniach 13–15 listopada 2026 r. w Londynie.
+// Dziękujemy za rejestrację na Warsztaty Muzyki Liturgicznej, które odbędą się w dniach 13–15 listopada 2026 r. w Londynie.
 
-Cieszymy się, że dołączysz do naszego wspólnego muzykowania! 🎶
+// Cieszymy się, że dołączysz do naszego wspólnego muzykowania! 🎶
 
-Co dalej?
+// Co dalej?
 
-Aby ostatecznie potwierdzić swój udział w warsztatach, prosimy o dokonanie wpłaty £50 na konto poniżej:
+// Aby ostatecznie potwierdzić swój udział w warsztatach, prosimy o dokonanie wpłaty £50 na konto poniżej:
 
-Dane do przelewu:
+// Dane do przelewu:
 
-Malgorzata Patecka
-Revolut
-Sort code: 04-29-09
-Account number: 00760595
+// Malgorzata Patecka
+// Revolut
+// Sort code: 04-29-09
+// Account number: 00760595
 
-W tytule przelewu prosimy wpisać:
-WLM – [NAZWISKO i IMIE]
+// W tytule przelewu prosimy wpisać:
+// WLM – [NAZWISKO i IMIE]
 
-Po zaksięgowaniu wpłaty Twoje miejsce na warsztatach zostanie oficjalnie potwierdzone, a Ty staniesz się uczestnikiem warsztatów.
+// Po zaksięgowaniu wpłaty Twoje miejsce na warsztatach zostanie oficjalnie potwierdzone, a Ty staniesz się uczestnikiem warsztatów.
 
-Po otrzymaniu wpłaty wyślemy Ci osobną wiadomość e-mail w późniejszym terminie, zawierającą wszystkie najważniejsze informacje dotyczące warsztatów, m.in. szczegółowy plan, miejsca i godziny zajęć, informacje dotyczące wyżywienia oraz pozostałe kwestie organizacyjne.
+// Po otrzymaniu wpłaty wyślemy Ci osobną wiadomość e-mail w późniejszym terminie, zawierającą wszystkie najważniejsze informacje dotyczące warsztatów, m.in. szczegółowy plan, miejsca i godziny zajęć, informacje dotyczące wyżywienia oraz pozostałe kwestie organizacyjne.
 
-Do zobaczenia!
-Nie możemy się już doczekać wspólnego śpiewania. 🎶
+// Do zobaczenia!
+// Nie możemy się już doczekać wspólnego śpiewania. 🎶
 
-Pozdrawiamy serdecznie,
-Zespół Warsztatów Muzyki Liturgicznej
-            `
+// Pozdrawiamy serdecznie,
+// Zespół Warsztatów Muzyki Liturgicznej
+//             `
 
-         }),
-     });
+//          }),
+//      });
 
-     //read response as text first
-      const responseText = await response.text();
+//      //read response as text first
+//       const responseText = await response.text();
 
-  console.log("Email API status:", response.status);
-  console.log("Email API response:", responseText);
+//   console.log("Email API status:", response.status);
+//   console.log("Email API response:", responseText);
 
-     if(!response.ok){
-      const errorText = await response.text();
-      throw new Error(`Email API failed: ${response.status} ${errorText}`);
-     }
+//      if(!response.ok){
+//       const errorText = await response.text();
+//       throw new Error(`Email API failed: ${response.status} ${errorText}`);
+//      }
 
-     return responseText;
-    }
+//      return responseText;
+//     }
 
-try {
-  await sendConfirmationEmail(name, email);
-  console.log("Confirmation email sent");
-} catch (emailError) {
-  console.error("Confirmation email failed:", emailError);
-}
+// try {
+//   await sendConfirmationEmail(name, email);
+//   console.log("Confirmation email sent");
+// } catch (emailError) {
+//   console.error("Confirmation email failed:", emailError);
+// }
 
 
 //send response to frontend
