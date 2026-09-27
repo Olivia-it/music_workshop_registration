@@ -13,7 +13,7 @@ const { MongoServerClosedError } = require("mongodb");
 
 app.use(cors());
 app.use(express.json());
-
+ 
 
 mongoose 
     .connect(process.env.MONGODB_URI)
@@ -35,10 +35,7 @@ const registrationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  age: {
-    type: String,
-    required: true,
-  },
+
   parish: {
     type: String,
     required: true,
