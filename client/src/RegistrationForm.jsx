@@ -360,7 +360,7 @@ console.log("Passed all validation");
         <li>Zabronione jest przyjmowanie używek czy wulgarne zachowanie. Palenie papierosów i e-papierosów jest niedopuszczlne w żadnym miejscu na terenie szkoły i parafii. Osoby, które nie zastosują się do tego punktu regulaminu zostaną niezwłocznie wykluczone z warsztatów.</li>
         <li>Uczestnicy warsztatów wyrażają zgodę na rejestrację prób oraz finałowego występu i przenoszą nieodpłatnie na rzecz Organizatora prawa do artystycznych wykonań dokonanych podczas warsztatów, z prawem przenoszenia na osoby trzecie. Uczestnicy wyrażają zgodę na rejestrację i publikowanie swojego wizerunku w mediach, mediach społecznościowych w celu dokumentacji i rejestracji przebiegu spotkania i koncertu.</li>
         <li>Zgłoszenie na warsztaty jest równoznaczne z akceptacją postanowień niniejszego Regulaminu.</li>
-        <li>Kontakt mailowy: warsztaty.stamfordhill@gmail.com</li>
+        <li>Kontakt mailowy: <br></br>warsztaty.stamfordhill@gmail.com</li>
         </ol>
 </p>
     </div>
