@@ -12,7 +12,6 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [age, setAge] = useState("");
   const [parish, setParish] = useState("");
   const [level, setLevel] = useState("");
   const [voice, setVoice] = useState("");
@@ -64,11 +63,6 @@ if(phone.trim() === ""){
 if(phone.length < 11){
   console.log("Invalid phone validation");
   setError("Please enter a valid phone number");
-  return;
-}
-
-if(age === ""){
-  setError("Wpisz swoj wiek.");
   return;
 }
 
@@ -126,7 +120,6 @@ console.log("Passed all validation");
       name: name,
       email: email,
       phone: phone,
-      age: age,
       parish: parish,
       level: level,
       voice: voice,
@@ -176,7 +169,6 @@ console.log("Passed all validation");
    setName("");
    setEmail("");
    setPhone("");
-   setAge("");
    setParish("");
    setLevel("");
    setVoice("");
@@ -240,11 +232,11 @@ console.log("Passed all validation");
 
         <section className="additional-info">
 
-        <div id="q3" className="question">  
+        {/* <div id="q3" className="question">  
           <label className="lbl">Ile masz lat?</label><br />
           <input type="radio" name="age" value="teen" checked={age === "teen"} onChange={(e) => setAge(e.target.value)}/> Poniżezej 15 lat <br />
           <input type="radio" name="age" value="adult" checked={age === "adult"} onChange={(e) => setAge(e.target.value)}/> 15+ <br />
-        </div>
+        </div> */}
 
         <div className="question">
           <label className="lbl">Do jakiej parafi należysz?</label><br />
@@ -354,7 +346,7 @@ console.log("Passed all validation");
         <li>Uczestnicy otrzymają potrzebne materiały podczas rejestracji przy wejściu.</li>
         <li>Warunkiem wzięcia udziału w warsztatach jest wypełnienie i przesłanie zgłoszenia z jednoczesnym dokonaniem pełnej, bezzwrotnej opłaty na konto podane przez organizatorów.</li>
         <li>Formularz dla osoby niepełnoletniej wypełnia rodzic / opiekun prawny.</li>
-        <li>Opłata za udział w warsztatach wynosi £50 od osoby powyżej 15 lat. Młodzież i dzieci w wieku 7-15 lat - £30;</li>
+        <li>Opłata za udział w warsztatach wynosi £50 od osoby.</li>
         <ul>
           <li>Cena obejmuje koszty prowadzenia zajęć, materiałów dydaktycznych, serwisu kawowego i ciast oraz obiadu w sobotę.</li>
           <li>Cena nie zawiera opłat parkingowych, biletów na przejazd oraz noclegu.</li>

@@ -22,22 +22,24 @@ function App(){
 
   return (
     <div>
-    {/* <div className="creator">
 
-    <div className="creator-flex">
-    <p>Created by Olivia Gie</p>
-    </div>
+    <div className="creator">
 
-    <div className="creator-flex">
+<div className="creator-flex">
+<p>Created by Olivia Gie</p></div>
+
+<div className="creator-flex">
     <img className="creator-logo" src="/src/assets/github-logo.png" alt="github-logo"/>
     <p>github.com/Olivia-it</p>
+</div>
+
+<div className="creator-flex">
+    <img className="creator-logo" src="/src/assets/linkedin-logo.png" alt="linkedin-logo" />
+    <p>linkedin.com/in/olivia-gie-developer</p>
+</div>
     </div>
 
-    <div className="creator-flex">
-    <img className="creator-logo" src="/src/assets/linkedin-logo.png" alt="linkedin-logo" />
-    <p>www.linkedin.com/in/olivia-gie-developer</p>
-    </div>
-    </div> */}
+
 <div className="top-bar"><a className=".reg-nav" href="#q1">
 <button onClick={() => setShowAdmin(false)}>Registration Form</button></a>
   <button onClick={() => setShowAdmin(true)}>Admin Login</button>

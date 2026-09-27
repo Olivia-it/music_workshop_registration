@@ -110,7 +110,6 @@ async function handlePaid(id) {
               <th>Paid</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Age</th>
               <th>Parish</th>
               <th>Level</th>
               <th>Voice</th>
@@ -132,7 +131,6 @@ async function handlePaid(id) {
                 <td className="paid"> {person.paid ? "Yes" : "No"}</td>
                 <td>{person.email}</td>
                 <td>{person.phone}</td>
-                <td>{person.age}</td>
                 <td>{person.parish}</td>
                 <td>{person.level}</td>
                 <td>{person.voice}</td> 

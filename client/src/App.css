@@ -25,7 +25,7 @@ width: 100vw;
 .creator-logo{
   width: 1rem;
   height: 1rem;
-  margin:  auto 1px;
+  margin:  auto;
 }
 
 .creator {
@@ -39,6 +39,10 @@ width: 100vw;
 
 }
 
+.creator-flex {
+  display: flex;
+  gap: -10px;
+}
 .creator p {
   color: rgb(23, 21, 26);
   font-size: 0.8rem;
@@ -186,21 +190,22 @@ font-size: 1.2rem;
 .top-bar {
   display: flex;
   justify-content: space-around;
-  margin: 1rem auto;
-  width: 80vw;
+  margin: 1rem 0;
+  width: 100vw;
 }
 
 .top-bar button {
-  padding: 0.7rem 1.2rem;
+  padding: 0.7rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   background: #e24212;
   color:  rgb(233, 217, 217);
-  min-width: 200px;
+  min-width: 100px;
   min-height: 60px;
- margin: 2rem auto;
+ margin: 2rem 0;
  text-align: center;
+ font-size: 1rem;;
   
 }
 
@@ -254,6 +259,8 @@ margin-top: 30px;
   border: 1px solid rgb(46, 36, 38);
   border-radius: 10px;
   margin-top: 3rem;
+  padding: 0.5rem;
+  text-decoration: none;
 }
 
 .btn-div {
@@ -331,6 +338,10 @@ td.index, th.index{
     flex-direction: column;
     align-items: center;
   }
+
+  td{
+    padding: 3px;
+  }
   .contact-info {
     text-align: center;
   }
@@ -369,10 +380,11 @@ margin-bottom: -1.8rem;
 
 .top-bar {
   gap: 1rem;
-  margin: auto;
+  margin: 0;
+  width: 100vw;
 }
 .top-bar button {
-  min-width: 100px;
+  width: 50px;
   min-height: 40px;
   font-size: 0.8rem;
 

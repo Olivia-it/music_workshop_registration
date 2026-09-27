@@ -100,7 +100,7 @@ app.get("/", (req, res) => {
 //res.json sends back response to React and saves registration in mongoDB
 app.post("/register", async (req, res) => {
 
-  const { name, email, phone, age, parish, level, voice, instrument, meal, allergy, terms, privacy } = req.body;
+  const { name, email, phone, parish, level, voice, instrument, meal, allergy, terms, privacy } = req.body;
 
   try {
 //validate if existing email
@@ -144,7 +144,6 @@ const existing = await Registration.findOne({ email });
         Name: ${name}
         Email: ${email}
         Phone: ${phone}
-        Age: ${age}
         Parish: ${parish}
         Level: ${level}
         Voice: ${voice}
@@ -200,7 +199,7 @@ Sort code: 04-29-09
 Account number: 00760595
 
 W tytule przelewu prosimy wpisać:
-WLM – [IMIĘ I NAZWISKO]
+WLM – [NAZWISKO i IMIE]
 
 Po zaksięgowaniu wpłaty Twoje miejsce na warsztatach zostanie oficjalnie potwierdzone, a Ty staniesz się uczestnikiem warsztatów.
 
