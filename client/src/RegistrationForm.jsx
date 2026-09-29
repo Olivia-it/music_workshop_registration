@@ -342,7 +342,7 @@ console.log("Passed all validation");
         <li>niedziela: szkoła St Ignatius Catholic Primary School, St Ann’s Road, London, N15 6ND</li>
         </ul>
     
-        <li>Zwieńczeniem warsztatów będzie Msza św. w niedzielę (15.11.2026) o godz.13.00 w kościele St Ignatius Catholic Church na Stamford Hill.</li>
+        <li>Zwieńczeniem warsztatów będzie Msza św. w niedzielę (15.11.2026) o godz.12.30 w kościele St Ignatius Catholic Church na Stamford Hill.</li>
         <li>Uczestnicy otrzymają potrzebne materiały podczas rejestracji przy wejściu.</li>
         <li>Warunkiem wzięcia udziału w warsztatach jest wypełnienie i przesłanie zgłoszenia z jednoczesnym dokonaniem pełnej, bezzwrotnej opłaty na konto podane przez organizatorów.</li>
         <li>Formularz dla osoby niepełnoletniej wypełnia rodzic / opiekun prawny.</li>
