@@ -205,7 +205,7 @@ console.log("Passed all validation");
       {/* closed registration code */}
 
       <div className="question">
-      <p>Rejestratracja do 1 Listopada</p>
+      <p className="closing-msg">Rejestratracja do 1 Listopada</p>
       </div>
 
 
