@@ -66,6 +66,9 @@ p{
   padding: 20px;
 }
 
+.closing-msg {
+  width: 80%; }
+
 form p, .submitted-box p:nth-child(1){
 color: rgb(23, 21, 26);
 font-size: 2rem;
