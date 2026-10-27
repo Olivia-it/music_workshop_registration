@@ -204,9 +204,9 @@ console.log("Passed all validation");
 
       {/* closed registration code */}
 
-      {/* <div className="question">
-      <p>Przepraszamy rejestracja jest juz zamknieta</p>
-      </div> */}
+      <div className="question">
+      <p>Rejestratracja do 1 Listopada</p>
+      </div>
 
 
 {/* will display when reg closes */}
