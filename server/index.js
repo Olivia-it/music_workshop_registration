@@ -189,10 +189,6 @@ const existing = await Registration.findOne({ email });
 
 // Dane do przelewu:
 
-// Malgorzata Patecka
-// Revolut
-// Sort code: 04-29-09
-// Account number: 00760595
 
 // W tytule przelewu prosimy wpisać:
 // WLM – [NAZWISKO i IMIE]
