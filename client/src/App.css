@@ -155,6 +155,10 @@ button:hover{
   background-color: rgb(34, 236, 34);
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 .container {
   margin: 0 auto;
