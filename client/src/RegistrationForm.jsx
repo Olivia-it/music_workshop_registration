@@ -300,7 +300,7 @@ console.log("Passed all validation");
         </section>
         </div>
         {error && <p className="error-msg">{error}</p>}
-        <button type="submit">Register</button>
+        <button type="submit" disabled >Register</button>
       </form>
 
   
